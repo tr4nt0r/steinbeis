@@ -2,9 +2,9 @@
 
 class BusinessexcellencecheckController extends Zend_Controller_Action {
 
-    protected $_form;
+    protected $_form = null;
     protected $_namespace = 'RegistrationController';
-    protected $_session;
+    protected $_session = null;
 
     public function init() {
         $this->view->headTitle()->prepend('BusinessExcellence Check 2011');
@@ -20,7 +20,11 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
         if ($this->getRequest()->isPost() && $form->isValid($this->getRequest()->getPost())) {
             
         } else {
-            print_r($_POST);
+            $post = $this->getRequest()->getPost();
+
+            if ($post['teil2']['auswertung'] !== false) {
+                //echo 'auswertung';
+            }
         }
         $this->view->form = $form->render();
         //$this->view->teil2 = $form->getSubForm('teil2')->render();
@@ -30,7 +34,12 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
         // action body
     }
 
-    public function getForm() {
+    public function auswertungAction() {
+        $this->_helper->layout()->disableLayout();
+        //$this->_helper->viewRenderer->setNoRender(true);
+    }
+
+    private function getForm() {
         if (null === $this->_form) {
             $this->_form = new Application_Form_Businessexcellencecheck();
         }
@@ -41,8 +50,9 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
      * Den Session Namespace erhalten den wir verwenden
      *
      * @return Zend_Session_Namespace
+     *
      */
-    public function getSessionNamespace() {
+    private function getSessionNamespace() {
         if (null === $this->_session) {
             $this->_session =
                     new Zend_Session_Namespace($this->_namespace);
@@ -55,8 +65,9 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
      * Eine Liste von bereits in der Session gespeicherten Forms erhalten
      *
      * @return array
+     *
      */
-    public function getStoredForms() {
+    private function getStoredForms() {
         $stored = array();
         foreach ($this->getSessionNamespace() as $key => $value) {
             $stored[] = $key;
@@ -69,8 +80,9 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
      * Eine Liste aller vorhandenen Subforms erhalten
      *
      * @return array
+     *
      */
-    public function getPotentialForms() {
+    private function getPotentialForms() {
         return array_keys($this->getForm()->getSubForms());
     }
 
@@ -78,8 +90,9 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
      * Welche Subform wurde übermittelt?
      *
      * @return false|Zend_Form_SubForm
+     *
      */
-    public function getCurrentSubForm() {
+    private function getCurrentSubForm() {
         $request = $this->getRequest();
         if (!$request->isPost()) {
             return false;
@@ -101,8 +114,9 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
      * Die nächste Suboform für die Anzeige erhalten
      *
      * @return Zend_Form_SubForm|false
+     *
      */
-    public function getNextSubForm() {
+    private function getNextSubForm() {
         $storedForms = $this->getStoredForms();
         $potentialForms = $this->getPotentialForms();
 
