@@ -1,0 +1,1174 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*------------------- CSS RESET ---------------------
+---------------------------------------------------*/
+* {
+padding : 0;
+margin : 0;
+}
+ul, ol {
+list-style : none;
+line-height:20px;
+}
+b, strong {
+font-weight : bold;
+}
+img, a img {
+border : none;
+}
+
+/*
+a:link, a:visited, a:hover, a:focus, a:active {
+color:#8a8a8d;
+text-decoration : none;
+}
+*/
+
+
+a:link, a:visited {
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	color:#d16e35;
+	text-decoration:none;
+}
+
+a:hover, a:active, a:focus {
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	color:#d16e35;
+	text-decoration:underline;
+}
+
+
+
+/*------------------- ALLGEMEIN ---------------------
+---------------------------------------------------*/
+.fl {
+	float : left;
+	padding-right : 10px;
+}
+
+.fr {
+	float : right;
+}
+
+.clearFloat {
+	clear : both;
+}
+
+.highlight {
+	color:#d16e35;
+}
+
+
+.print {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:11px;
+	color:#666666;
+	text-decoration:none;
+}
+
+
+.print a:link;
+.print a:visited {
+	color:#666666;
+}
+
+.print a:hover;
+.print a:active;
+.print a:focus {
+	color:#d16e35;
+	text-decoration:none;
+}
+
+
+
+
+hr {
+	border:none;
+	height:1px;
+}
+
+h1 {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 12px;
+	font-weight : bold;
+	color: #7f7f7f;
+}
+
+
+
+
+h2 {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 12px;
+	font-weight: normal;
+	color: #7f7f7f;
+}
+
+
+h3 {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 12px;
+	font-weight : bold;
+	color: #000000;
+}
+
+h4 {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 12px;
+	font-weight:normal;
+	color: #000000;
+}
+
+
+
+h5 {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 12px;
+	font-weight : bold;
+	text-transform : uppercase;
+	color : #000000;
+	display:inline;
+}
+
+h6 {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 12px;
+	font-weight : bold;
+	text-transform : uppercase;
+	color : #002242;
+	display:inline;
+}
+
+
+
+
+/*------------------- VORSCHALTSEITE ---------------------
+---------------------------------------------------*/
+
+
+#containerVorschalt {
+	width: 1024px;
+	min-height: 670px;
+	margin: 30px auto;
+	text-align:center;
+	background-color: #3e3d40;
+}
+
+
+
+#headerVorschalt {
+	width:934px;
+	text-align:left;
+	min-height:95px;
+	padding: 55px 0px 0px 90px;
+	background-color: #3e3d40;
+}
+
+
+#tickerVorschalt {
+	width:844px;
+	min-height:30px;
+	padding: 10px 90px 0px 90px;
+	background-color: #3e3d40;
+}
+
+
+#contentVorschalt {
+	width:685px;
+	min-height:250px;
+	margin: 50px 0px 0px 339px;
+	background-color: #3e3d40;
+}
+
+
+#footerVorschalt {
+	width:1024px;
+	text-align:left;
+	padding: 20px 0px 20px 0px;
+	background-color:#FFFFFF;
+}
+
+
+#footerGreyVorschalt {
+	width:1024px;
+	height: 20px;
+	background-color: #3e3d40;
+}
+
+
+/*------------------- LAYOUT ---------------------
+---------------------------------------------------*/
+body {
+	font-family : Arial, Helvetica, sans-serif;
+	background-color:#FFFFFF;
+	color:#000000;
+	background-image:url(../pics/background_line.jpg);
+	background-repeat:repeat-x;
+	background-color:#d9dcdd;
+}
+
+#container {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/background.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerStart {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_start.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerWarumBeratung {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_warum_beratung.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerWerBrauchtBeratung {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_wer_braucht_beratung.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerWirUeberUns {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_wir_ueber_uns.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+
+#containerBusiness {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_business.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+
+#containerStrategie {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_strategie.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerProzessmanagement {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_prozessmanagement.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerMarketingmanagement {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_marketingmanagement.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerInnovation {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_innovation.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerDiversifikation {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_diversifikation.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerProduktentwicklung {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_produktentwicklung.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerChangemanagement {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_changemanagement.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerPersonal {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_personal.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerRecruiting {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_recruiting.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerPersonalentwicklung {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_personalentwicklung.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerOrganisationsentwicklung {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_organisationsentwicklung.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerMitarbeiterbindung {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_mitarbeiterbindung.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerPhilosophie {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_philosophie.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerTeam {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_team.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerBE_Check {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_be_check.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerKontakt {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_kontakt.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#containerImpressum {
+	width: 1024px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-image:url(../pics/header/header_philosophie.jpg);
+	background-repeat:no-repeat;
+	background-color:#d9dcdd;
+}
+
+
+#headerGrey {
+	width: 877px;
+	height: 64px;
+	margin: 0px 73px 0px 74px;
+	padding: 0px 0px 0px 0px;
+	background-image:url(../pics/header_grey_bg_50.png);
+	background-repeat:no-repeat;
+}
+
+
+
+#headerGreyLogo {
+	float:left;
+	width:200px;
+	padding:19px 0px 0px 36px; 
+}
+
+
+#headerGreySuche {
+	float:right;
+	text-align:right;
+	width:265px;
+	padding:19px 36px 0px 0px;
+}
+
+#headerContent {
+	width: 877px;
+	height: 186px;
+	margin: 0px 73px 0px 74px;
+	padding: 20px 0px 0px 0px;
+}
+
+
+
+#navigation {
+	width: 877px;
+	height: 36px;
+	margin: 18px 73px 0px 74px;
+	padding: 0px 0px 0px 0px;
+}
+
+
+#contentBereich {
+	width: 877px;
+	margin: 0px 73px 0px 74px;
+	padding: 0px 0px 0px 0px;
+	background-color:#FFFFFF;
+}
+
+
+
+p.kursiv {
+	font-style:italic;
+}
+
+
+p.nameFett {
+	font-weight:bold;
+	padding-bottom: 8px;
+}
+
+
+#wrapper {
+	width: 1024px;
+	margin:0px;
+	padding:0px;
+}
+
+
+#containerLeft {
+	width: 820px;
+	background-color:#ffffff;
+	margin: 0px 0px 5px 0px;
+	float:left;
+}
+
+
+#containerRight {
+	width: 199px;
+	background-color:#ffffff;
+	margin: 0px 0px 5px 0px;
+	float:right;
+}
+
+
+
+/*---------Menu neu----------*/
+
+
+/* ------------------------------------------------------- main_menu */
+
+
+
+#main_menu {
+	/*font-size:92.31%;*/
+	font-size:12px;
+	line-height:normal;
+	/*padding: 161px 35px 0 31px;*/
+	/*margin-top: 161px;*/ /*testweise auskommentiert*/
+	padding: 0px 0px 0px 36px;
+	height: 42px;
+	/*background-image: url(images/bg_mainmenu.gif);*/
+	/*background-position: bottom;*/
+	/*background-repeat: repeat-x;*/
+	width: 845px;
+}
+
+
+
+
+#left_side a,
+#right_side a,
+a.link-arrow {
+	background: url(images/link_arrow.gif) 0 0.4em no-repeat;
+	padding-left: 7px;
+}
+
+
+#nav, 
+#nav ul.menu2 {
+	float: left;
+	width: 100%;
+	list-style: none;
+	padding: 0;
+	margin:0;
+}
+#nav li {
+	float: left;
+	width: 130px;
+	height: 42px;
+	margin-right: 5px;
+	/*background-image: url(images/button_passiv.gif);*/
+	background-image: url(../pics/navigation/menu_bg_p.png); /*bg-bild navi geändert*/
+	background-position: top;
+	background-repeat: no-repeat;
+}
+#nav a {
+	font-size:12px; /*textgröße von Navi ändern*/
+	padding: 14px 0 0 0;
+	display: block;
+	height: 27px;
+	color: #FFFFFF;  /*testweise rolloverfarbe bei hauptnavi geändert. war white*/
+	text-decoration: none;
+	text-align: center;
+}
+
+
+
+/* hauptnavi bei rollover silber */
+ul#nav li a:link,
+ul#nav li a:visited {
+	text-decoration:none;
+	color:#FFFFFF;
+}
+
+ul#nav li a:hover,
+ul#nav li a:active,
+ul#nav li a:focus {
+	text-decoration:none;
+	color:#D2DDE0;
+}
+/* ... bis hier hin */
+
+
+
+
+#nav iframe {
+	display:none;/*sorry for IE5*/
+	display:block;/*sorry for IE5*/
+	position:absolute;/*must have*/
+	top:0;/*must have*/
+	left:0;/*must have*/
+	z-index:-1;/*must have*/
+	filter:mask();/*must have*/
+	width: 100%;/*must have for any big value*/
+	height: 100%;/*must have for any big value*/
+ }
+
+#nav ul.menu2 {
+	display: none;
+	position: absolute;
+	width: 128px;
+	margin: 0;
+	list-style: none;
+	font-size: 92.31%;
+	border-left: 1px solid #DB7035; /*borders der Submenus rausgenommen*/
+	border-right: 1px solid #DB7035; /*borders der Submenus rausgenommen*/
+	border-bottom: 1px solid #DB7035; /*borders der Submenus rausgenommen*/
+	z-index: 9999;
+	overflow-x: hidden;
+	overflow-y: auto;
+	overflow: -moz-scrollbars-none;
+}
+#nav li li {
+	width: 128px;
+	height: auto;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	overflow: -moz-scrollbars-none;
+}
+
+#nav li ul.menu2 a {
+	/*background: #1D5764;*/
+	background: #DB7035; /*bg-farbe submenu geändert*/
+	display: block !important;
+	height: auto;
+	width: 106px;
+	text-align:left;
+	color: #FFFFFF;
+	text-decoration: none;
+	padding: 6px 10px 6px 10px;
+	/*
+	border-bottom: 1px solid #3E6E7A;
+	border-left: 1px solid #3E6E7A;
+	border-right: 1px solid #3E6E7A;
+	*/
+	border-top: 1px solid #D2DDE0;/*borders der submenus geändert 17022011-- war border-bottom*/
+	border-left: 1px solid #DB7035; /*borders der Submenus rausgenommen*/
+	border-right: 1px solid #DB7035; /*borders der Submenus rausgenommen*/
+}
+
+#nav li ul.menu2 li:hover a,
+#nav li ul.menu2 li.active a {
+	color: #D2DDE0;
+	font-weight: bold;
+	height: auto;
+}
+
+
+#nav li ul.menu2 li.sfhover a {
+	color: #D2DDE0;
+	font-weight: bold;
+	height: auto;
+}
+
+
+#nav li:hover ul.menu2 {
+	display: block !important;
+	background: none;
+}
+
+/*#nav li.active a:hover ul.menu2 {
+	border: 1px solid red;
+	display: block !important;
+}*/
+
+
+
+#nav li.sfhover ul.menu2 {
+	display: block !important;
+	background: none;
+}
+
+
+#nav li:hover, 
+#nav li.sfhover,
+#nav li.active {
+	height: 42px;
+	/*background-image: url(images/button_aktiv.gif);*/
+	background-image: url(../pics/navigation/menu_bg_a.png);/*hintergrund navi geändert*/
+	background-position: top;
+	background-repeat: no-repeat;
+	color: D2DDE0; /*testweise rolloverfarbe bei hauptnavi geändert. war white*/
+}
+
+#nav li:hover li, 
+#nav li.sfhover li {
+	height: auto;
+	background: none;
+	color: D2DDE0; /*testweise rolloverfarbe bei hauptnavi geändert. war white*/
+}
+
+
+/*---------------- BreadcrumbNavigation ---------------
+---------------------------------------------------*/
+
+#breadcrumb {
+	width:785px;
+	color:#8a8a8d;
+	background-color:#FFFFFF;
+	padding: 18px 0px 10px 0px;
+	margin-left: 65px;
+	font-size:11px;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+
+ul#breadcrumbListe li {
+	display:inline;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	font-weight:bold;
+	color:#8a8a8d;
+}
+
+
+ul#breadcrumbListe li a:link, 
+ul#breadcrumbListe li a:visited {
+	color:#8a8a8d;
+	text-decoration:none;
+	font-weight:normal;
+}
+
+ul#breadcrumbListe li a:hover, 
+ul#breadcrumbListe li a:active,
+ul#breadcrumbListe li a:focus {
+	color:#8a8a8d;
+	text-decoration:underline;
+	font-weight:normal;
+}
+
+
+/*
+li.breadcrumbAktiv {
+	text-decoration:normal;
+	font-weight:bold;
+	padding: 0px 0px 0px 0px;
+	color:#8a8a8d;
+}
+*/
+
+
+
+/*------------------- CONTENT ---------------------
+---------------------------------------------------*/
+
+
+#contentText {
+	width:776px;
+	margin: 36px 36px 0px 65px;
+	padding: 0px 0px 0px 0px;
+}
+
+
+
+#contentText li {
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size:12px;
+	line-height:16px;
+	padding-bottom:10px;
+	color:#000000;
+	list-style-type:disc;
+	margin-left:10px;
+}
+
+
+#contentText a:link,
+#contentText a:visited {
+	font-weight:bold;
+	text-decoration:none;
+	color:#D16E35;
+}
+
+#contentText a:hover,
+#contentText a:active,
+#contentText a:focus {
+	font-weight:bold;
+	text-decoration:underline;
+	color:#D16E35;
+}
+
+
+ul#linkliste li {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	line-height:16px;
+	padding-bottom:10px;
+	text-decoration:none;
+	color:#D16E35;	
+}
+
+
+ul#linkliste li a:link,
+ul#linkliste li a:visited {
+	text-decoration:none;
+	color:#D16E35;
+}
+
+ul#linkliste li a:hover,
+ul#linkliste li a:active,
+ul#linkliste li a:focus {
+	text-decoration:underline;
+	color:#D16E35;
+}
+
+
+#contentWrapper {
+	display:inline;
+	width: 776px;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+}
+
+
+
+/*------------ Content Startseite 3spaltig ----------
+---------------------------------------------------*/
+
+
+#contentLeftStart {
+	float:left;
+	width: 247px;
+}
+
+
+#contentRightStart {
+	float:right;
+	width: 529px;
+}
+
+
+#contentTextSpalteLinks {
+	width: 197px;
+	padding: 0px 20px 0px 30px;
+}
+
+
+
+#contentTextSpalteMitte {
+	float:left;
+	width: 225px;
+	/*border-left: 1px solid #CCCCCC;*/
+	/*border-right: 1px solid #CCCCCC;*/
+	padding: 0px 20px 0px 30px;
+}
+
+
+#contentTextSpalteRechts {
+	float:right;
+	width: 204px;
+	padding: 0px 20px 0px 30px;
+}
+
+
+/*--------Content Startseite-----------
+--------------------------------------*/
+
+
+#contentLeft_OhneInfoboxStart {
+	float:left;
+	width: 520px;
+}
+
+
+#contentRight_OhneInfoboxStart {
+	float:right;
+	width: 256px;
+	margin-bottom: 20px;
+}
+
+
+#contentTextSpalteLinks_OhneInfoboxStart{
+	width: 500px;
+	padding: 0px 20px 0px 0px;
+}
+
+#contentTextSpalteRechts_OhneInfoboxStart {
+	float:right;
+	width: 216px;
+	padding: 0px 20px 0px 20px;
+}
+
+/*------------ Content Inhaltseiten ohne Infobox 2-spaltig ----------
+--------------------------------------------------------------------*/
+
+
+
+#contentLeft_OhneInfobox {
+	float:left;
+	width: 300px;
+}
+
+
+
+#contentRight_OhneInfobox {
+	float:right;
+	width: 476px;
+	margin-bottom: 20px;
+}
+
+
+
+#contentTextSpalteLinks_OhneInfobox {
+	width: 280px;
+	padding: 0px 20px 0px 0px;
+}
+
+
+#contentTextSpalteRechts_OhneInfobox {
+	float:right;
+	width: 436px;
+	padding: 0px 20px 0px 20px;
+}
+
+
+/*------------ Content Inhaltseiten mit Infobox 3-spaltig ----------
+--------------------------------------------------------------------*/
+
+
+#contentLeft {
+	float:left;
+	width: 539px;
+}
+
+
+#contentRight {
+	float:right;
+	width: 202px;
+}
+
+
+#contentTextSpalteLinks_MitInfobox {
+	float:left;
+	width: 180px;
+	padding: 0px 20px 0px 0px;
+}
+
+
+
+#contentTextSpalteMitte_MitInfobox {
+	float:right;
+	width: 329px;
+	padding: 0px 0px 0px 10px;
+	margin-bottom:20px;
+}
+
+
+#contentInfobox {
+	width: 170px;
+	padding: 0px 0px 0px 0px;
+	background-color:#efefef;
+	padding: 15px 15px 15px 15px;
+	border: 1px solid #D9DCDD;
+}
+
+
+
+
+/*------------ Content Teamseite----------
+----------------------------------------------*/
+
+
+#contentLeftTeam {
+	float:left;
+	width: 180px;
+	padding: 0px 20px 0px 0px;
+	margin: 0px 0px 30px 0px;
+}
+
+
+#contentRightTeam {
+	float:right;
+	width: 536px;
+	padding: 0px 20px 0px 20px;
+}
+
+
+/*------------ Content Kontaktseite----------
+----------------------------------------------*/
+
+
+#contentLeftKontakt {
+	float:left;
+	width: 220px;
+	padding-left:30px;
+}
+
+
+#contentRightKontakt {
+	float:right;
+	width: 519px;
+}
+
+
+#contentTextSpalteLinksKontakt {
+	width: 197px;
+	padding: 0px 20px 0px 30px;
+}
+
+
+
+#contentTextSpalteMitteKontakt {
+	float:left;
+	width: 225px;
+	/*border-left: 1px solid #CCCCCC;*/
+	/*border-right: 1px solid #CCCCCC;*/
+	padding: 0px 0px 0px 30px;
+}
+
+
+#contentTextSpalteRechtsKontakt {
+	float:right;
+	width: 254px;
+	padding: 0px 0px 0px 0px;
+}
+
+
+
+/*------------ Content Footer Verlauf ----------
+----------------------------------------------*/
+
+#contentFooter {
+	width: 877px;
+	height:50px;
+    background-image:url(../pics/footer_verlauf.jpg);
+}
+
+
+
+
+
+#metaNavigation {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+	font-weight:normal;
+	color:#999999;
+	background-color:#d9dcdd;
+	width: 841px;
+	margin: 0px 0px 0px 0px;
+	padding: 10px 36px 10px 0px;
+	text-align:right;
+}
+
+
+#metaNavigation a:link,
+#metaNavigation a:visited {
+	color:#999999;
+}
+
+
+#metaNavigation a:hover,
+#metaNavigation a:focus,
+#metaNavigation a:active {
+	color:#D16E35;
+	text-decoration:underline;
+}
+
+
+
+/*-------------- SITEMAP ----------
+---------------------------------*/
+
+/*
+#content_mainSitemap {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 12px;
+	line-height : 16px;
+	width : 575px;
+	padding : 0px 0px 0px 0px;
+	color : #cccc00;
+	text-align : left;
+}
+
+#content_mainSitemap a:link, a:visited {
+	color:#002242;
+	text-decoration: none;
+
+}
+
+
+#content_mainSitemap a:hover, a:focus, a:active {
+	color:#cccc00;
+	text-decoration:none;
+}
+
+
+#sitemapHead {
+	width: 700px;
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 15px;
+	font-weight : bold;
+	text-transform : uppercase;
+	color : #002242;
+	line-height: 30px;
+	margin: 5px 0px 20px 0px;
+	padding: 0px 0px 0px 20px;
+	
+}
+
+#sitemapSubHead {
+	width: 700px;
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 10px;
+	font-weight : bold;
+	text-transform : uppercase;
+	color : #002242;
+	line-height: 30px;
+	margin: 5px 0px 5px 0px;
+	padding: 0px 0px 0px 20px;
+	/*background: url(../pics/style/1_1_20trans.png);*/
+/*	
+}
+
+
+table.sitemapTable {
+	width: 575px;
+	padding: 0px;
+}
+
+
+
+td.sitemapTable {
+	width: 100px;
+	font-weight:normal;
+	font-size:10px;
+	color:cccc00;
+	border: 1px solid #002242;
+	padding: 10px 10px 10px 10px;
+}
+
+*/
+
+
+
+/*------------ IMPRESSUM ----------
+---------------------------------*/
+
+#contentLeft_OhneInfoboxImpressum {
+	float:left;
+	width: 775px;
+}
+
+
+/*------------ Content Footer Verlauf ----------
+---------------------------------*/ 

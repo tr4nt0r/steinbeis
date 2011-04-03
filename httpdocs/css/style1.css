@@ -1,0 +1,457 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*------------------- CSS RESET ---------------------
+---------------------------------------------------*/
+* {
+padding : 0;
+margin : 0;
+}
+ul, ol {
+list-style : none;
+}
+b, strong {
+font-weight : bold;
+}
+img, a img {
+border : none;
+}
+a:link, a:visited, a:hover, a:focus, a:active {
+color : #ffffff;
+text-decoration : none;
+}
+
+
+
+/*------------------- ALLGEMEIN ---------------------
+---------------------------------------------------*/
+.fl {
+	float : left;
+	padding-right : 10px;
+}
+
+.fr {
+	float : right;
+}
+
+.clearFloat {
+	clear : both;
+}
+
+hr {
+	border:none;
+	height:1px;
+	background-color:#002242;
+}
+
+h1 {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 11px;
+	font-weight : bold;
+	text-transform : uppercase;
+	color : #cccc00;
+}
+
+
+h1 a:link, a:visited {
+	color:#002242;
+}
+
+
+h1 a:hover, a:active, a:focus {
+	color:#cccc00;
+}
+
+
+
+
+h2 {
+	font-family:Helvetica, sans-serif;
+	font-size : 18px;
+	font-weight:normal;
+	line-height: 30px;
+	color : #002242;
+	padding-bottom:30px;
+}
+
+h3 {
+	font-family :  Helvetica, Arial, sans-serif;
+	font-size : 12px;
+	font-weight:normal;
+	line-height: 22px;
+	color : #002242;
+}
+
+h4 {
+	font-family :  Helvetica, Arial, sans-serif;
+	font-size : 12px;
+	font-weight:normal;
+	line-height: 18px;
+	color : #002242;
+}
+
+
+h4 a:link, a:visited {
+	color:#002242;
+}
+
+
+h4 a:hover, a:active, a:focus {
+	color:#cccc00;
+}
+
+
+
+h5 {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 12px;
+	font-weight : bold;
+	text-transform : uppercase;
+	color : #000000;
+	display:inline;
+}
+
+h6 {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 12px;
+	font-weight : bold;
+	text-transform : uppercase;
+	color : #002242;
+	display:inline;
+}
+
+
+
+
+/*------------------- VORSCHALTSEITE ---------------------
+---------------------------------------------------*/
+
+
+#containerVorschalt {
+	width: 1024px;
+	min-height: 670px;
+	margin: 30px auto;
+	text-align:center;
+	background-color: #3e3d40;
+}
+
+
+
+#headerVorschalt {
+	width:934px;
+	text-align:left;
+	min-height:95px;
+	padding: 55px 0px 0px 90px;
+	background-color: #3e3d40;
+}
+
+
+#tickerVorschalt {
+	width:844px;
+	min-height:30px;
+	padding: 10px 90px 0px 90px;
+	background-color: #3e3d40;
+}
+
+
+#contentVorschalt {
+	width:685px;
+	min-height:250px;
+	margin: 50px 0px 0px 339px;
+	background-color: #3e3d40;
+}
+
+
+#footerVorschalt {
+	width:1024px;
+	text-align:left;
+	padding: 20px 0px 20px 0px;
+	background-color:#FFFFFF;
+}
+
+
+#footerGreyVorschalt {
+	width:1024px;
+	height: 20px;
+	background-color: #3e3d40;
+}
+
+
+/*------------------- LAYOUT ---------------------
+---------------------------------------------------*/
+body {
+	font-family : Arial, Helvetica, sans-serif;
+	background-color:#FFFFFF;
+	color : #003366;
+}
+
+#container {
+	width: 1024px;
+	min-height: 783px;
+	margin: 0px auto;
+	padding: 37px 0px 0px 0px;
+	background-color:#CCCCCC;
+	background-image:url(../pics/background.jpg);
+	background-repeat:no-repeat;
+}
+
+
+#headerGrey {
+	width: 877px;
+	height: 64px;
+	margin: 0px 73px 0px 74px;
+	padding: 0px 0px 0px 0px;
+	background-image:url(../pics/header_grey_bg.png);
+	background-repeat:no-repeat;
+}
+
+
+#headerContent {
+	width: 877px;
+	height: 186px;
+	margin: 0px 73px 0px 74px;
+	padding: 20px 0px 0px 0px;
+}
+
+
+#navigation {
+	width: 877px;
+	height: 54px;
+	margin: 0px 73px 0px 74px;
+	padding: 0px 0px 0px 0px;
+}
+
+
+#contentBereich {
+	width: 877px;
+	min-height: 400px;
+	margin: 0px 73px 0px 74px;
+	padding: 0px 0px 0px 0px;
+	background-color:#FFFFFF;
+}
+
+
+
+p.kursiv {
+	font-style:italic;
+}
+
+
+p.nameFett {
+	font-weight:bold;
+	padding-bottom: 8px;
+}
+
+
+#wrapper {
+	width: 1024px;
+	margin:0px;
+	padding:0px;
+}
+
+
+#containerLeft {
+	width: 820px;
+	background-color:#ffffff;
+	margin: 0px 0px 5px 0px;
+	float:left;
+}
+
+
+#containerRight {
+	width: 199px;
+	background-color:#ffffff;
+	margin: 0px 0px 5px 0px;
+	float:right;
+}
+
+
+
+/*------------------- CONTENT ---------------------
+---------------------------------------------------*/
+
+
+#contentText {
+	width:524px;
+	height:430px;
+	color: #002242;
+	background-image:url(../pics/style/content_bg.png);
+	margin: 0px 0px 0px 0px;
+	padding: 42px 160px 10px 136px;
+}
+
+
+#wrapperLeft {
+	float:left;
+}
+
+
+
+
+/*----------------- CONTENT REFERENZEN --------------
+---------------------------------------------------*/
+
+
+#contentText > h2 {
+	font-family:Helvetica, sans-serif;
+	font-size : 18px;
+	font-weight:normal;
+	line-height: 30px;
+	color : #002242;
+	padding-bottom:50px;
+}
+
+
+
+#contentReferenzenTextLeft {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	line-height: 18px;
+	letter-spacing: 0px;
+	font-weight:normal;
+	color: #002242;
+	float:left;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 20px 0px 0px;
+}
+
+
+#contentReferenzenTextRight {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	line-height: 18px;
+	font-weight:normal;
+	color: #002242;
+	float:left;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 20px;
+}
+
+
+#contentReferenzenNumbers {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:bold;
+	color: #002242;
+	float:left;
+	margin: 100px 0px 0px 0px;
+	padding:0px;
+}
+
+
+#contentReferenzenNumbers a:link, a:visited {
+	color:#002242;
+}
+
+#contentReferenzenNumbers a:hover, a:active, a:focus {
+	color:#cccc00;
+}
+
+
+#contentReferenzenNumbers li {
+	display:inline;
+	padding: 0px 5px 0px 5px;
+}
+
+
+
+/*-------------- SITEMAP ----------
+---------------------------------*/
+
+#content_mainSitemap {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 12px;
+	line-height : 16px;
+	width : 575px;
+	padding : 0px 0px 0px 0px;
+	color : #cccc00;
+	text-align : left;
+}
+
+#content_mainSitemap a:link, a:visited {
+	color:#002242;
+	text-decoration: none;
+
+}
+
+
+#content_mainSitemap a:hover, a:focus, a:active {
+	color:#cccc00;
+	text-decoration:none;
+}
+
+
+#sitemapHead {
+	width: 700px;
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 15px;
+	font-weight : bold;
+	text-transform : uppercase;
+	color : #002242;
+	line-height: 30px;
+	margin: 5px 0px 20px 0px;
+	padding: 0px 0px 0px 20px;
+	
+}
+
+#sitemapSubHead {
+	width: 700px;
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 10px;
+	font-weight : bold;
+	text-transform : uppercase;
+	color : #002242;
+	line-height: 30px;
+	margin: 5px 0px 5px 0px;
+	padding: 0px 0px 0px 20px;
+	/*background: url(../pics/style/1_1_20trans.png);*/
+}
+
+
+table.sitemapTable {
+	width: 575px;
+	padding: 0px;
+}
+
+
+
+td.sitemapTable {
+	width: 100px;
+	font-weight:normal;
+	font-size:10px;
+	color:cccc00;
+	border: 1px solid #002242;
+	padding: 10px 10px 10px 10px;
+}
+
+
+/*------------ IMPRESSUM ----------
+---------------------------------*/
+
+#contentImpressum {
+	width:568px;
+	color: #002242;
+	background-image:url(../pics/style/impressum_bg.png);
+	background-repeat:no-repeat;
+	margin: 0px 0px 0px 0px;
+	padding: 42px 116px 10px 136px;
+}
+
+
+
+#contentImpressum > h3 {
+	font-family :  Helvetica, Arial, sans-serif;
+	font-size : 8px;
+	font-weight:bold;
+	line-height: 12px;
+	color : #002242;
+}
+
+
+#contentImpressum > h4 {
+	font-family :  Helvetica, Arial, sans-serif;
+	font-size : 8px;
+	font-weight:normal;
+	line-height: 12px;
+	color : #002242;
+}

@@ -1,0 +1,20 @@
+<fieldset <?php if ($this->element->getMessages()): ?>class="error"<?php endif; ?>>
+    <?php
+    echo $this->formNote($this->element->getName(),
+            '<h3>' . $this->element->getLabel() . '</h3>') ?>
+    <div class="be-group">
+        <?php
+        $options = array();
+        foreach ($this->element->getMultiOptions() as $key => $value) {
+           $options[$key] = $value;
+        }
+        echo $this->{$this->element->helper}(
+                $this->element->getFullyQualifiedName(),
+                $this->element->getValue(),
+                array('label_class' => 'be-label', 'class' => 'checkbox', 'escape' => false, 'label_placement' => 'prepend'),
+                $options,
+                "\n</div>\n<div class=\"be-group\">\n",
+                false
+        )  ?>
+    </div>
+</fieldset>

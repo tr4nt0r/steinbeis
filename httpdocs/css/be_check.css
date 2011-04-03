@@ -1,0 +1,186 @@
+.be-box1 {
+  padding: 6px 12px;
+  background: #9c9d9f;
+  font-size: 13px;
+  color: #fff;
+  font-weight: bold;
+  margin: 0 0 5px;
+}
+.be-box2 {
+  padding: 6px 12px;
+  background: #dadadc;
+  font-size: 13px;
+  color: #fff;
+  font-weight: bold;
+  margin: 0 0 5px;
+}
+.be-box3 {
+  padding: 4px 12px;
+  background: #d57f4d;
+  font-size: 11px;
+  color: #fff;
+  font-weight: normal;
+  margin: 0 0 5px 257px;
+  overflow: hidden;
+}
+.be-box3 .left {
+  width: 220px;
+  float: left;
+}
+.be-box3 .right {
+  width: 220px;
+  float: right;
+  text-align: right;
+}
+.be-box4 {
+  margin: 0 0 5px 257px;
+}
+.be-box4 div {
+	width: 80px;
+	float:left;
+	margin: 0 5px 0 0;
+  background: #d57f4d;
+  text-align: center;
+}
+.be-box4 div span {
+	line-height: 30px;
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+}
+.be-left {
+  width: 245px;
+  float: left;
+}
+.be-text1 {
+  color: #D16E35;
+}
+.be-text2 {
+  color: #000;
+  font-size: 11px;
+  font-weight: normal;
+}
+.be-button {
+  text-align: right;
+}
+.be-button input[type=button], .be-button input[type=submit] {
+  background: #d57f4d;
+  border: 0;
+  color: #fff;
+  font-size: 11px;
+  padding: 1px 15px;
+	cursor: pointer;
+}
+
+input[type=text] {
+  background: #f4f4f5;
+  width: 450px;
+  border: 0;
+  color: #000;
+  font-size: 11px;
+  padding: 1px 2px;
+  margin: 0 0 12px 0;
+}
+
+fieldset {
+  border: 0;
+  margin: 5px 0 15px 0;
+}
+fieldset h3 {
+  color: #D16E35;
+  font-size: 14px;
+  padding: 10px 0 12px;
+}
+
+.be-label {
+  width: 250px;
+  margin-right: 5px;
+  font-size: 11px;
+  color: #8A8A8D;
+}
+
+.be-group {
+  width: 380px;
+  height: 60px;
+  float: left;
+}
+
+.radio {
+	height: 32px;
+	width: 80px;
+	float:left;
+	margin: 2px 0 4px;
+	padding: 0 0 0 5px;
+	background: url("../pics/checkbox.png") no-repeat;
+	background-repeat:no-repeat;
+	cursor: pointer;
+}
+.checkbox {
+	height: 32px;
+	width: 80px;
+	float:left;
+	margin: 2px 0 4px;
+	padding: 0 0 0 5px;
+	background: url("../pics/checkbox.png") no-repeat;
+	cursor: pointer;
+	text-align:left;
+}
+.checkbox input,.radio input {
+	display: none;
+}
+.checkbox input.show,.radio input.show {
+	display: inline;
+}
+.selected {
+	background-position: 0 -52px;
+}
+.block {
+	width: 50%;
+	float: left;
+}
+label {
+	float:left;
+	text-align:left;
+}
+
+
+/* result */
+#be-result {
+  background: #dadadc;
+  margin: 15px 0 20px;
+  padding: 15px 20px;
+}
+#be-result h1 {
+  color: #D16E35;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 2px 0 15px;
+}
+#be-result p {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 5px 0 15px;
+}
+
+#be-result p span {
+  color: #D16E35;
+  font-size: 12px;
+  font-weight: bold;
+}
+#be-result-bar {
+  height: 100px;
+	background: url("../pics/be-bar.png") no-repeat 15px 0;
+	margin: 0 -15px;
+}
+#be-result-arrow {
+  height: 30px;
+  text-align:right;
+}
+#be-result-text p {
+  background: #ededed;
+  color: #000;
+  padding: 20px 45px 20px 45px;
+  font-size: 13px;
+  font-weight: normal;
+}
+
