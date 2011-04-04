@@ -3,7 +3,8 @@
 class Application_Form_Businessexcellencecheck extends Zend_Form {
 
     public function init() {
-        $this->setMethod('post');
+        $this->setMethod('post')
+                ->setName('businessexcellencecheck');
 
         $validatorNotEmpty = new Zend_Validate_NotEmpty();
         $validatorNotEmpty->setMessage('Bitte wählen Sie eine Antwort', Zend_Validate_NotEmpty::IS_EMPTY);
@@ -249,7 +250,7 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
             new Zend_Form_Decorator_HtmlTag(array('tag' => 'div', 'class' => 'be-button')),
         ));
 
-        $this->addDecorators(array(            
+        $this->addDecorators(array(
             new Zend_Form_Decorator_FormElements(),
             new Zend_Form_Decorator_Form()
         ));
