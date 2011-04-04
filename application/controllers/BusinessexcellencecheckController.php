@@ -22,7 +22,7 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
         } else {
             $post = $this->getRequest()->getPost();
 
-            if ($post['teil2']['auswertung'] !== false) {
+            if (isset($post['teil2']['auswertung'])) {
                 //echo 'auswertung';
             }
         }
