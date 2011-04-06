@@ -5,6 +5,10 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
     protected $_form = null;
     protected $_namespace = 'RegistrationController';
     protected $_session = null;
+    protected $_result = 0;
+    protected $_antworten_checkbox13 = array('1', '5', '6');
+    protected $_antworten_checkbox14 = array('3', '5', '6');
+    protected $_antworten_checkbox15 = array('1', '4', '5');
 
     public function init() {
         $this->view->headTitle()->prepend('BusinessExcellence Check 2011');
@@ -18,13 +22,54 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
         $form = new Application_Form_Businessexcellencecheck();
 
         if ($this->getRequest()->isPost() && $form->isValid($this->getRequest()->getPost())) {
-            
-        } else {
             $post = $this->getRequest()->getPost();
 
             if (isset($post['teil2']['auswertung'])) {
-                //echo 'auswertung';
+               
+                $params = $form->getValidValues($this->getRequest()->getPost());
+
+                //Punkte aus Teil1 zusammenzählen
+                foreach ($params['teil1'] as $k => $v) {
+                    switch ($v) {
+                        case 2: //30-49%
+                            $this->_result += 2;
+                            break;
+                        case 3: //50-64%
+                            $this->_result += 3;
+                            break;
+                        case 4: //65-79%
+                            $this->_result += 5;
+                            break;
+                        case 5: //80-95%
+                            $this->_result += 7;
+                            break;
+                        case 6: //95-100%
+                            $this->_result += 10;
+                            break;
+                    }
+                }
+
+                //Punkte aus Teil2 zusammenzählen               
+                foreach ($params['teil2'] as $k => $v) {
+                    if (isset($this->{'_antworten_' . $k})) {
+                        switch (count(array_intersect($this->{'_antworten_' . $k}, $v))) {
+                            case 1:
+                                $this->_result += 1;
+                                break;
+                            case 2:
+                                $this->_result += 3;
+                                break;
+                            case 3:
+                                $this->_result += 7;
+                                break;
+                        }
+                    }
+                }
+
+                $this->view->result = round($this->_result /1.41);
             }
+        } else {
+
         }
         $this->view->form = $form->render();
         //$this->view->teil2 = $form->getSubForm('teil2')->render();
