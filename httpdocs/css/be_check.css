@@ -145,6 +145,22 @@ label {
 
 
 /* result */
+#be-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #000;
+    z-index: 100;
+    display: block;
+    opacity: 0.75;
+}
+
+* html #be-overlay {	/* IE6 */
+                     position: absolute;
+                     width: 100%;
+}
 #be-result {
     background: #dadadc;
     margin: 15px 0 20px;
@@ -152,7 +168,7 @@ label {
     position:fixed;
     width: 736px;
     top: 20%;
-    
+
     left: auto;
     right: auto;
     z-index:101;
