@@ -52,7 +52,7 @@
                 $('#be-result').show('normal');
                 $('#be-result-close').click(function(){
                     $('#be-result').hide('normal', function() {
-                        $('#be-overlay').fadeTo('fast', 0);
+                        $('#be-overlay').fadeTo('fast', 0).hide();
                     });
                     
                     return false;
