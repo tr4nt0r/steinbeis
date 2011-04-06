@@ -47,15 +47,15 @@
 </div>
 
 <?php if (isset($this->result)) : ?>
-<script type="text/javascript">
-    $(function() {
-        $('#be-result').slideUp().show('slow');
-        $('#be-result-close').click(function(){
-            $('#be-result').slideDown().hide('slow');
-            return false;
-        });
-    })
-</script>
+        <script type="text/javascript">
+            $(function() {
+                $('#be-result').slideUp().show('slow');
+                $('#be-result-close').click(function(){
+                    $('#be-result').slideDown().hide('slow');
+                    return false;
+                });
+            })
+        </script>        
         <div id="be-result">
             <div id="be-result-close" style="text-align: right;" >SCHLIESSEN</div>
             <h1>BE-CHECK 2011</h1>
@@ -97,5 +97,5 @@
                         </p>
 
                     </div>
-                </div>                
+                </div>
 <?php endif; ?>
