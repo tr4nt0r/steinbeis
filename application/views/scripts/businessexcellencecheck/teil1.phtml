@@ -49,10 +49,10 @@
 <?php if (isset($this->result)) : ?>
         <script type="text/javascript">
             $(function() {
-                $('#be-result').show('normal');
+                $('#be-result').fadeIn('normal');
                 $('#be-result-close').click(function(){
-                    $('#be-result').hide('normal', function() {
-                        $('#be-overlay').fadeTo('fast', 0).hide();
+                    $('#be-result').fadeOut('normal', function() {
+                        $('#be-overlay').fadeOut('normal');
                     });
                     
                     return false;
