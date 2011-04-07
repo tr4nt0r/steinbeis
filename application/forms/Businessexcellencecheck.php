@@ -127,7 +127,8 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
                 ->addMultiOption(4, 'Größere Änderungen sind bei uns nicht nötig, da unser Geschäftsmodell seit Jahren auf einer soliden Basis steht.')
                 ->addMultiOption(5, 'Die Mitarbeiter werden auf die Veränderungen durch Maßnahmen wie Schulung oder Workshops vorbereitet.')
                 ->addMultiOption(6, 'Interne und externe Treiber für die Veränderung unserer Organisation werden ständig erfasst und bewertet.')
-                ->setRequired();
+                ->setRequired()
+                ->addValidator(new Manni_Validate_CheckboxChecked(array('checkboxgroup' => 'checkbox15', 'max' => 3)));
 
 
 
@@ -210,6 +211,7 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
 
 
         $teil2->setDecorators(array(
+            new Zend_Form_Decorator_FormErrors(),
             new Zend_Form_Decorator_FormElements (),
             new Zend_Form_Decorator_ViewScript(array(
                 'viewScript' => 'businessexcellencecheck/_formHeaderTeil2.phtml',
@@ -250,7 +252,7 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
             new Zend_Form_Decorator_HtmlTag(array('tag' => 'div', 'class' => 'be-button')),
         ));
 
-        $this->addDecorators(array(
+        $this->addDecorators(array(            
             new Zend_Form_Decorator_FormElements(),
             new Zend_Form_Decorator_Form()
         ));
