@@ -25,7 +25,7 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
             $post = $this->getRequest()->getPost();
 
             if (isset($post['teil2']['auswertung'])) {
-               
+
                 $params = $form->getValidValues($this->getRequest()->getPost());
 
                 //Punkte aus Teil1 zusammenzählen
@@ -66,12 +66,15 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
                     }
                 }
 
-                $this->view->result = round($this->_result /1.41);
+                $this->view->result = round($this->_result / 1.41);
+                 $this->view->form = $form->render();
+            } else {
+
             }
         } else {
-
+            $this->view->form = $form->render();
         }
-        $this->view->form = $form->render();
+
         //$this->view->teil2 = $form->getSubForm('teil2')->render();
     }
 

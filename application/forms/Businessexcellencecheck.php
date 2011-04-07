@@ -199,7 +199,11 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
             ))));
 
         $teil1->setDecorators(array(
-            new Zend_Form_Decorator_FormElements ()
+            new Zend_Form_Decorator_FormElements (),
+            new Zend_Form_Decorator_ViewScript(array(
+                'viewScript' => 'businessexcellencecheck/_formHeaderTeil1.phtml',
+                'placement' => 'prepend'
+            ))
         ));
 
         $teil2->setElementDecorators(array(
