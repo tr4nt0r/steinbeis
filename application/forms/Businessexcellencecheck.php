@@ -106,7 +106,7 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
                 ->addMultiOption(4, 'Unsere Strategie leitet sich ausschließlich von unseren Kernkompetenzen ab.')
                 ->addMultiOption(5, 'Wir überprüfen unsere Strategie jährlich und machen viertel- bis halbjährlich ein kurzes Review.')
                 ->addMultiOption(6, 'Politische und gesellschaftliche Änderungen sind Basis für unsere Strategie.')
-                ->setRequired();
+                ->addValidator(new Manni_Validate_CheckboxChecked(array('checkboxgroup' => 'checkbox13', 'max' => 3)));
 
 
         $check2 = new Zend_Form_Element_MultiCheckbox('checkbox14');
@@ -117,7 +117,7 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
                 ->addMultiOption(4, 'Größere Änderungen sind bei uns nicht nötig, da unser Geschäftsmodell seit Jahren auf einer soliden Basis steht.')
                 ->addMultiOption(5, 'Die Mitarbeiter werden auf die Veränderungen durch Maßnahmen wie Schulung oder Workshops vorbereitet.')
                 ->addMultiOption(6, 'Interne und externe Treiber für die Veränderung unserer Organisation werden ständig erfasst und bewertet.')
-                ->setRequired();
+                ->addValidator(new Manni_Validate_CheckboxChecked(array('checkboxgroup' => 'checkbox14', 'max' => 3)));
 
         $check3 = new Zend_Form_Element_MultiCheckbox('checkbox15');
         $check3->setLabel('Was geschieht in Ihrem Unternehmen, um den Prozess der Produkt- und Dienstleistungsentstehung zur Sicherung der Qualität zu gestalten?')
@@ -127,7 +127,6 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
                 ->addMultiOption(4, 'Größere Änderungen sind bei uns nicht nötig, da unser Geschäftsmodell seit Jahren auf einer soliden Basis steht.')
                 ->addMultiOption(5, 'Die Mitarbeiter werden auf die Veränderungen durch Maßnahmen wie Schulung oder Workshops vorbereitet.')
                 ->addMultiOption(6, 'Interne und externe Treiber für die Veränderung unserer Organisation werden ständig erfasst und bewertet.')
-                ->setRequired()
                 ->addValidator(new Manni_Validate_CheckboxChecked(array('checkboxgroup' => 'checkbox15', 'max' => 3)));
 
 
@@ -211,7 +210,6 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
 
 
         $teil2->setDecorators(array(
-            new Zend_Form_Decorator_FormErrors(),
             new Zend_Form_Decorator_FormElements (),
             new Zend_Form_Decorator_ViewScript(array(
                 'viewScript' => 'businessexcellencecheck/_formHeaderTeil2.phtml',
@@ -252,7 +250,11 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
             new Zend_Form_Decorator_HtmlTag(array('tag' => 'div', 'class' => 'be-button')),
         ));
 
-        $this->addDecorators(array(            
+        $this->addDecorators(array(
+            new Zend_Form_Decorator_ViewScript(array(
+                'viewScript' => 'businessexcellencecheck/_formError.phtml',
+                'placement' => 'prepend'
+            )),
             new Zend_Form_Decorator_FormElements(),
             new Zend_Form_Decorator_Form()
         ));

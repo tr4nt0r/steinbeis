@@ -66,6 +66,9 @@ class Manni_Validate_CheckboxChecked extends Zend_Validate_Abstract {
 
         if (array_key_exists('checkboxgroup', $options)) {
             $this->setCheckboxGroup($options['checkboxgroup']);
+        } else {
+            require_once 'Zend/Validate/Exception.php';
+            throw new Zend_Validate_Exception("Missing option 'checkboxgroup'");
         }
     }
 
@@ -150,7 +153,7 @@ class Manni_Validate_CheckboxChecked extends Zend_Validate_Abstract {
         if ($checkboxgroup === null) {
 
             require_once 'Zend/Validate/Exception.php';
-            throw new Zend_Validate_Exception('No Checkbox Group defined, parameter checkboxgroup is required in Manni_Validate_CheckboxChecked');
+            throw new Zend_Validate_Exception("Missing option 'checkboxgroup'");
         }
 
 
