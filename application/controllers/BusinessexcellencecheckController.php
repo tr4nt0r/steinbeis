@@ -20,8 +20,8 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
 
     public function teil1Action() {
         $form = new Application_Form_Businessexcellencecheck();
-
-        if ($this->getRequest()->isPost() && $form->isValid($this->getRequest()->getPost())) {
+        $form->isValid($this->getRequest()->getPost());
+        if ($this->getRequest()->isPost() && $form->getSubForm('teil1')->isValid($this->getRequest()->getPost()) && $form->getSubForm('teil2')->isValid($this->getRequest()->getPost())) {
             $post = $this->getRequest()->getPost();
 
             if (isset($post['teil2']['auswertung'])) {
@@ -67,9 +67,17 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
                 }
 
                 $this->view->result = round($this->_result / 1.41);
-                 $this->view->form = $form->render();
-            } else {
+                $this->view->form = $form->render();
+            } elseif ($form->getSubForm('teil3')->isValid($this->getRequest()->getPost())) {
+                //Formular komplett validiert
 
+                $mail = new Zend_Mail('UTF-8');
+                $mail->setBodyHtml($this->view->partial('businessexcellencecheck/mail.phtml', $form->getValues()));
+                $mail->setFrom('manni@zapto.de', 'Steinbeis-Beratungszentrum');
+                $mail->addTo('manni@zapto.de', 'Steinbeis-Beratungszentrum');
+                $mail->setSubject('BUSINESS EXCELLENCE CHECK');
+            } else {
+                $this->view->form = $form->render();
             }
         } else {
             $this->view->form = $form->render();

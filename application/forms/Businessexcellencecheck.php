@@ -137,16 +137,21 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
 
 
         $firma = new Zend_Form_Element_Text('firma');
-        $firma->setLabel('Name des Unternehmens');
+        $firma->setLabel('Name des Unternehmens')
+                ->setRequired();
 
         $name = new Zend_Form_Element_Text('name');
-        $name->setLabel('Ihr Name');
+        $name->setLabel('Ihr Name')
+                ->setRequired();
 
         $mail = new Zend_Form_Element_Text('mail');
-        $mail->setLabel('Ihre E-Mail Adresse');
+        $mail->setLabel('Ihre E-Mail Adresse')
+                ->setRequired();
 
         $confirmation = new Zend_Form_Element_Checkbox('confirm');
-        $confirmation->setLabel('JA, bitte werten Sie meine Antworten individuell aus und nehmen Sie unverbindlich Kontakt zu mir auf.');
+        $confirmation->setLabel('JA, bitte werten Sie meine Antworten individuell aus und nehmen Sie unverbindlich Kontakt zu mir auf.')
+                ->setUncheckedValue('')
+                ->setRequired();
 
         $senden = new Zend_Form_Element_Submit('senden');
         $senden->setLabel('Senden');
@@ -223,6 +228,7 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
 
 
         $teil3->setElementDecorators(array(
+            new Zend_Form_Decorator_Errors(),
             new Zend_Form_Decorator_ViewHelper(),
             new Zend_Form_Decorator_Label(array('class' => 'be-label')),
             new Zend_Form_Decorator_HtmlTag(array('tag' => 'div'))
