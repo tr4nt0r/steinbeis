@@ -1,3 +1,14 @@
+.be-warning {
+  padding: 12px;
+  background: #fff;
+  font-size: 13px;
+  color: #d57f4d;
+  font-weight: bold;
+  margin: 20px 0 20px;
+  border: 1px solid #d57f4d;
+  text-align: center;
+}
+
 .be-box1 {
     padding: 6px 12px;
     background: #9c9d9f;
