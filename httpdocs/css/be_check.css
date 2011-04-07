@@ -9,6 +9,12 @@
   text-align: center;
 }
 
+.error {
+  padding: 2px 0;
+  background: #f6e4da;
+  margin: 3px 0 13px 0;
+}
+
 .be-box1 {
     padding: 6px 12px;
     background: #9c9d9f;
