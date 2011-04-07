@@ -76,6 +76,7 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
                 $mail->setFrom('manni@zapto.de', 'Steinbeis-Beratungszentrum');
                 $mail->addTo('manni@zapto.de', 'Steinbeis-Beratungszentrum');
                 $mail->setSubject('BUSINESS EXCELLENCE CHECK');
+                $mail->send();
             } else {
                 $this->view->form = $form->render();
             }
