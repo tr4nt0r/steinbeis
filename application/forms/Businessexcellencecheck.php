@@ -11,14 +11,14 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
 
         $multi1 = new Zend_Form_Element_Radio('radio1');
         $multi1->setLabel('Die branchenweit herausfordernden Ziele der Geschäftskennzahlen (z.B. Marktanteil, ROCE, EBIT) des Unternehmens wurden im abgelaufenen Geschäftsjahr erreicht oder übertroffen.')
-                ->addMultiOption(1)->addMultiOption(2)->addMultiOption(3)->addMultiOption(4)->addMultiOption(5)->addMultiOption(6)
+                ->addMultiOption(1, '0-29%')->addMultiOption(2, '30-49%')->addMultiOption(3, '50-64%')->addMultiOption(4, '65-79%')->addMultiOption(5, '80-95%')->addMultiOption(6, '96-100%')
                 ->setSeparator("\n")
                 ->setRequired()
                 ->addValidator($validatorNotEmpty, true);
 
         $multi2 = new Zend_Form_Element_Radio('radio2');
         $multi2->setLabel('Die Ziele der Prozess- (z.B. Rücklaufquote, Produktivitäten) und Personalkennzahlen (z.B. Weiterbildungsstunden pro Mitarbeiter, Krankenstand) wurden im abgelaufenen Geschäftsjahr erreicht oder übertroffen.')
-                ->addMultiOption(1)->addMultiOption(2)->addMultiOption(3)->addMultiOption(4)->addMultiOption(5)->addMultiOption(6)
+                ->addMultiOption(1, '0-29%')->addMultiOption(2, '30-49%')->addMultiOption(3, '50-64%')->addMultiOption(4, '65-79%')->addMultiOption(5, '80-95%')->addMultiOption(6, '96-100%')
                 ->setSeparator("\n")
                 ->setRequired(true)
                 ->addValidator($validatorNotEmpty, true);
@@ -26,14 +26,14 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
 
         $multi3 = new Zend_Form_Element_Radio('radio3');
         $multi3->setLabel('Die Geschäfts- und Prozesskennzahlen werden mit den wichtigsten Wettbewerbern oder dem Branchendurchschnitt verglichen, reflektiert und entsprechende Ziele und Maßnahmen abgeleitet.')
-                ->addMultiOption(1)->addMultiOption(2)->addMultiOption(3)->addMultiOption(4)->addMultiOption(5)->addMultiOption(6)
+                ->addMultiOption(1, '0-29%')->addMultiOption(2, '30-49%')->addMultiOption(3, '50-64%')->addMultiOption(4, '65-79%')->addMultiOption(5, '80-95%')->addMultiOption(6, '96-100%')
                 ->setSeparator("\n")
                 ->setRequired()
                 ->addValidator($validatorNotEmpty, true);
 
         $multi4 = new Zend_Form_Element_Radio('radio4');
         $multi4->setLabel('Die Geschäfts-, Prozess- und Personalkennzahlen werden regelmäßig (z.B. monatlich) erhoben und jährlich ausgewertet und zur Ziel- und Strategiebildung verwendet.')
-                ->addMultiOption(1)->addMultiOption(2)->addMultiOption(3)->addMultiOption(4)->addMultiOption(5)->addMultiOption(6)
+                ->addMultiOption(1, '0-29%')->addMultiOption(2, '30-49%')->addMultiOption(3, '50-64%')->addMultiOption(4, '65-79%')->addMultiOption(5, '80-95%')->addMultiOption(6, '96-100%')
                 ->setSeparator("\n")
                 ->setRequired()
                 ->addValidator($validatorNotEmpty, true);
@@ -41,14 +41,14 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
 
         $multi5 = new Zend_Form_Element_Radio('radio5');
         $multi5->setLabel('Wie genau können die real anfallenden Kosten der verschiedenen Abteilungen (z.B. Werbe-, Entwicklungs-, Buchhaltungs-, Produktionskosten, Management, Büromaterial, Energie) pro verkaufter Einheit berechnet werden?')
-                ->addMultiOption(1)->addMultiOption(2)->addMultiOption(3)->addMultiOption(4)->addMultiOption(5)->addMultiOption(6)
+                ->addMultiOption(1, '0-29%')->addMultiOption(2, '30-49%')->addMultiOption(3, '50-64%')->addMultiOption(4, '65-79%')->addMultiOption(5, '80-95%')->addMultiOption(6, '96-100%')
                 ->setSeparator("\n")
                 ->setRequired()
                 ->addValidator($validatorNotEmpty, true);
 
         $multi6 = new Zend_Form_Element_Radio('radio6');
         $multi6->setLabel('Die Kundenzufriedenheit wird auf verschiedene Weise (Fragebögen, Interviews, Rückmeldungen etc.) regelmäßig (z.B. monatlich) erfasst, aufgezeichnet und objektiv (externe Stelle) zur Ableitung von Maßnahmen ausgewertet.')
-                ->addMultiOption(1)->addMultiOption(2)->addMultiOption(3)->addMultiOption(4)->addMultiOption(5)->addMultiOption(6)
+                ->addMultiOption(1, '0-29%')->addMultiOption(2, '30-49%')->addMultiOption(3, '50-64%')->addMultiOption(4, '65-79%')->addMultiOption(5, '80-95%')->addMultiOption(6, '96-100%')
                 ->setSeparator("\n")
                 ->setRequired()
                 ->addValidator($validatorNotEmpty, true);
@@ -56,7 +56,7 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
 
         $multi7 = new Zend_Form_Element_Radio('radio7');
         $multi7->setLabel('Die verschiedenen Aspekte der Mitarbeiterzufriedenheit (Betriebsklima, Arbeitsbedingungen, Entlohnung etc.) werden regelmäßig (z.B. jährlich) durch externe Stellen schriftlich erfasst und zur Ableitung von Maßnahmen analysiert.')
-                ->addMultiOption(1)->addMultiOption(2)->addMultiOption(3)->addMultiOption(4)->addMultiOption(5)->addMultiOption(6)
+                ->addMultiOption(1, '0-29%')->addMultiOption(2, '30-49%')->addMultiOption(3, '50-64%')->addMultiOption(4, '65-79%')->addMultiOption(5, '80-95%')->addMultiOption(6, '96-100%')
                 ->setSeparator("\n")
                 ->setRequired()
                 ->addValidator($validatorNotEmpty, true);
@@ -64,7 +64,7 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
 
         $multi8 = new Zend_Form_Element_Radio('radio8');
         $multi8->setLabel('Wie weit werden die Produktivitäten (z.B. Stückzahl pro Mitarbeiter) der einzelnen Abteilungen regelmäßig (z.B. monatlich) gemessen, verglichen und zur Ableitung von Maßnahmen (z.B. Fortbildung, Prozessverbesserung) herangezogen?')
-                ->addMultiOption(1)->addMultiOption(2)->addMultiOption(3)->addMultiOption(4)->addMultiOption(5)->addMultiOption(6)
+                ->addMultiOption(1, '0-29%')->addMultiOption(2, '30-49%')->addMultiOption(3, '50-64%')->addMultiOption(4, '65-79%')->addMultiOption(5, '80-95%')->addMultiOption(6, '96-100%')
                 ->setSeparator("\n")
                 ->setRequired()
                 ->addValidator($validatorNotEmpty, true);
@@ -78,21 +78,21 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
 
         $multi10 = new Zend_Form_Element_Radio('radio10');
         $multi10->setLabel('Für jeden Mitarbeiter werden jährlich in einem persönlichen Gespräch seine persönlichen Firmenziele festgelegt. Diese passen genau zu den Abteilungszielen und unterstützen mit diesen die Gesamtziele des Unternehmens.')
-                ->addMultiOption(1)->addMultiOption(2)->addMultiOption(3)->addMultiOption(4)->addMultiOption(5)->addMultiOption(6)
+                ->addMultiOption(1, '0-29%')->addMultiOption(2, '30-49%')->addMultiOption(3, '50-64%')->addMultiOption(4, '65-79%')->addMultiOption(5, '80-95%')->addMultiOption(6, '96-100%')
                 ->setSeparator("\n")
                 ->setRequired()
                 ->addValidator($validatorNotEmpty, true);
 
         $multi11 = new Zend_Form_Element_Radio('radio11');
         $multi11->setLabel('Im Rahmen der Personalplanung, die sich an der kurz- bis mittelfristigen Strategie orientiert, wird in einem jährlichen Gespräch ein individuell auf die Qualifi kationen, Kenntnisse und Anforderungen des Mitarbeiters abgestimmter Plan zur Weiterbildung erstellt.')
-                ->addMultiOption(1)->addMultiOption(2)->addMultiOption(3)->addMultiOption(4)->addMultiOption(5)->addMultiOption(6)
+                ->addMultiOption(1, '0-29%')->addMultiOption(2, '30-49%')->addMultiOption(3, '50-64%')->addMultiOption(4, '65-79%')->addMultiOption(5, '80-95%')->addMultiOption(6, '96-100%')
                 ->setSeparator("\n")
                 ->setRequired()
                 ->addValidator($validatorNotEmpty, true);
 
         $multi12 = new Zend_Form_Element_Radio('radio12');
         $multi12->setLabel('Wie weit wird das Angebot von Produkten und Dienstleistungen regelmäßig (z.B. halbjährlich) unter Beteiligung von Kunden, Mitarbeitern und Lieferanten überprüft und angepasst?')
-                ->addMultiOption(1)->addMultiOption(2)->addMultiOption(3)->addMultiOption(4)->addMultiOption(5)->addMultiOption(6)
+                ->addMultiOption(1, '0-29%')->addMultiOption(2, '30-49%')->addMultiOption(3, '50-64%')->addMultiOption(4, '65-79%')->addMultiOption(5, '80-95%')->addMultiOption(6, '96-100%')
                 ->setSeparator("\n")
                 ->setRequired()
                 ->addValidator($validatorNotEmpty, true);
@@ -106,6 +106,7 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
                 ->addMultiOption(4, 'Unsere Strategie leitet sich ausschließlich von unseren Kernkompetenzen ab.')
                 ->addMultiOption(5, 'Wir überprüfen unsere Strategie jährlich und machen viertel- bis halbjährlich ein kurzes Review.')
                 ->addMultiOption(6, 'Politische und gesellschaftliche Änderungen sind Basis für unsere Strategie.')
+                ->setRequired()
                 ->addValidator(new Manni_Validate_CheckboxChecked(array('checkboxgroup' => 'checkbox13', 'max' => 3)));
 
 
@@ -117,6 +118,7 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
                 ->addMultiOption(4, 'Größere Änderungen sind bei uns nicht nötig, da unser Geschäftsmodell seit Jahren auf einer soliden Basis steht.')
                 ->addMultiOption(5, 'Die Mitarbeiter werden auf die Veränderungen durch Maßnahmen wie Schulung oder Workshops vorbereitet.')
                 ->addMultiOption(6, 'Interne und externe Treiber für die Veränderung unserer Organisation werden ständig erfasst und bewertet.')
+                ->setRequired()
                 ->addValidator(new Manni_Validate_CheckboxChecked(array('checkboxgroup' => 'checkbox14', 'max' => 3)));
 
         $check3 = new Zend_Form_Element_MultiCheckbox('checkbox15');
@@ -127,7 +129,8 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
                 ->addMultiOption(4, 'Größere Änderungen sind bei uns nicht nötig, da unser Geschäftsmodell seit Jahren auf einer soliden Basis steht.')
                 ->addMultiOption(5, 'Die Mitarbeiter werden auf die Veränderungen durch Maßnahmen wie Schulung oder Workshops vorbereitet.')
                 ->addMultiOption(6, 'Interne und externe Treiber für die Veränderung unserer Organisation werden ständig erfasst und bewertet.')
-                ->addValidator(new Manni_Validate_CheckboxChecked(array('checkboxgroup' => 'checkbox15', 'max' => 3)));
+                ->addValidator(new Manni_Validate_CheckboxChecked(array('checkboxgroup' => 'checkbox15', 'max' => 3)))
+                ->setRequired();
 
 
 
@@ -146,7 +149,8 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
 
         $mail = new Zend_Form_Element_Text('mail');
         $mail->setLabel('Ihre E-Mail Adresse')
-                ->setRequired();
+                ->setRequired()
+                ->addValidator(new Zend_Validate_EmailAddress());
 
         $confirmation = new Zend_Form_Element_Checkbox('confirm');
         $confirmation->setLabel('JA, bitte werten Sie meine Antworten individuell aus und nehmen Sie unverbindlich Kontakt zu mir auf.')
@@ -211,7 +215,7 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
             ))
         ));
 
-        $teil2->setElementDecorators(array(
+        $teil2->setElementDecorators(array(            
             new Zend_Form_Decorator_ViewScript(array(
                 'viewScript' => 'businessexcellencecheck/_formElementMulticheckbox.phtml'
             ))

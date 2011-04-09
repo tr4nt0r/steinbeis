@@ -1,13 +1,17 @@
 <fieldset <?php if ($this->element->getMessages()): ?>class="error"<?php endif; ?>>
     <?php
     echo $this->formNote($this->element->getName(),
-            '<label class="be-label">' . $this->element->getLabel() . '</label>') ?>
+            '<label class="be-label">x' . $this->element->getLabel() . '</label>') ?>
     <?php
+    $options = array();
+    foreach ($this->element->getMultiOptions() as $key => $value) {
+        $options[$key] = '';
+    }
     echo $this->{$this->element->helper}(
             $this->element->getFullyQualifiedName(),
             $this->element->getValue(),
             array('label_class' => 'radio'),
-            $this->element->getMultiOptions(),
+            $options,
             "\n"
     ) ?>
 </fieldset>

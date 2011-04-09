@@ -114,7 +114,10 @@
                 text-decoration:underline;
             }
             #templateHeader{
-                background-color:#D8E2EA;
+                background-color:#3e3d40;
+                min-height:95px;
+                padding: 35px 0px 90px 45px;
+
                 border-bottom:0;
             }
             .headerContent{
@@ -139,7 +142,7 @@
             #templateContainer,.bodyContent{
                 background-color:#FDFDFD;
             }
-            .bodyContent div{
+            .bodyContent div {
                 color:#505050;
                 font-family:Arial;
                 font-size:14px;
@@ -188,9 +191,7 @@
             #utility div{
                 text-align:center;
             }
-            #monkeyRewards img{
-                max-width:190px;
-            }
+
         </style></head>
     <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="-webkit-text-size-adjust: none;margin: 0;padding: 0;background-color: #FAFAFA;width: 100% !important;">
         <center>
@@ -204,12 +205,13 @@
                                     <!-- // Begin Template Header \\ -->
                                     <table border="0" cellpadding="0" cellspacing="0" width="600" id="templateHeader" style="border-bottom: 0;">
                                         <tr>
-                                            <td class="headerContent" style="color: #202020;font-family: Arial;font-size: 34px;font-weight: bold;line-height: 100%;padding: 0;text-align: center;vertical-align: middle;">
+                                            <td class="headerContent" style="color: #202020;font-family: Arial;font-size: 34px;font-weight: bold;line-height: 100%;padding: 0;text-align: left;vertical-align: middle;">
 
                                                 <!-- // Begin Module: Standard Header Image \\ -->
                                                 <!--img src="http://gallery.mailchimp.com/653153ae841fd11de66ad181a/images/placeholder_600.gif" alt border="0" style="margin: 0;padding: 0;max-width: 600px;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;" id="headerImage campaign-icon" /-->
+                                                <img src="http://steinbeis/pics/stw_logo_header.png" alt="Steinbeis-Beratungszentrum" alt border="0" style="margin: 0;padding: 0;max-width: 400px;border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;" id="headerImage campaign-icon" />
                                                 <!-- // End Module: Standard Header Image \\ -->
-                                               
+
                                             </td>
                                         </tr>
                                     </table>
@@ -228,7 +230,33 @@
                                                     <tr>
                                                         <td valign="top">
                                                             <div style="color: #505050;font-family: Arial;font-size: 14px;line-height: 150%;text-align: left;">
-<?php print_r($this); ?>
+                                                                <h2>Der BusinessExcellence Check 2011</h2>
+
+                                                                <h>Teil 1</h3>
+                                                                    <?php foreach ($this->radio as $v) : ?>
+                                                                        <p>
+                                                                            <b>Frage:</b><br />
+                                                                        <?php echo $v['frage']; ?><br />
+                                                                        <b>Antwort:</b><br />
+                                                                        <?php echo $v['antwort'] ?>
+                                                                    </p>
+
+                                                                    <?php endforeach; ?>
+                                                                        <h3>Teil 2</h3>
+                                                                    <?php foreach ($this->checkbox as $v) : ?>
+                                                                            <p>
+                                                                                <b>Frage:</b><br />
+                                                                        <?php echo $v['frage']; ?><br />
+                                                                            <b>Antworten:</b><br />
+                                                                            <ul>
+                                                                            <?php foreach ($v['antwort'] as $m) : ?>
+                                                                                <li class="bodyContent"><?php echo $m ?></li>
+                                                                            <?php endforeach; ?>
+                                                                            </ul>
+
+                                                                        </p>    
+                                                                        <p>&nbsp;</p>
+                                                                    <?php endforeach; ?>
                                                             </div>
                                                         </td>
                                                     </tr>

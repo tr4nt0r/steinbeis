@@ -20,71 +20,99 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
 
     public function teil1Action() {
         $form = new Application_Form_Businessexcellencecheck();
-        $form->isValid($this->getRequest()->getPost());
-        if ($this->getRequest()->isPost() && $form->getSubForm('teil1')->isValid($this->getRequest()->getPost()) && $form->getSubForm('teil2')->isValid($this->getRequest()->getPost())) {
-            $post = $this->getRequest()->getPost();
+        $postData = $this->getRequest()->getPost();
 
-            if (isset($post['teil2']['auswertung'])) {
+        if (
+                $this->getRequest()->isPost() &&
+                isset($postData['teil2']['auswertung']) &&
+                $form->getSubForm('teil1')->isValid($postData) &&
+                $form->getSubForm('teil2')->isValid($postData)
+        ) {
+            $params = $form->getValidValues($postData);
 
-                $params = $form->getValidValues($this->getRequest()->getPost());
+            //Punkte aus Teil1 zusammenzählen
+            foreach ($params['teil1'] as $k => $v) {
+                switch ($v) {
+                    case 2: //30-49%
+                        $this->_result += 2;
+                        break;
+                    case 3: //50-64%
+                        $this->_result += 3;
+                        break;
+                    case 4: //65-79%
+                        $this->_result += 5;
+                        break;
+                    case 5: //80-95%
+                        $this->_result += 7;
+                        break;
+                    case 6: //95-100%
+                        $this->_result += 10;
+                        break;
+                }
+            }
 
-                //Punkte aus Teil1 zusammenzählen
-                foreach ($params['teil1'] as $k => $v) {
-                    switch ($v) {
-                        case 2: //30-49%
-                            $this->_result += 2;
+            //Punkte aus Teil2 zusammenzählen
+            foreach ($params['teil2'] as $k => $v) {
+                if (isset($this->{'_antworten_' . $k})) {
+                    switch (count(array_intersect($this->{'_antworten_' . $k}, $v))) {
+                        case 1:
+                            $this->_result += 1;
                             break;
-                        case 3: //50-64%
+                        case 2:
                             $this->_result += 3;
                             break;
-                        case 4: //65-79%
-                            $this->_result += 5;
-                            break;
-                        case 5: //80-95%
+                        case 3:
                             $this->_result += 7;
                             break;
-                        case 6: //95-100%
-                            $this->_result += 10;
-                            break;
                     }
                 }
-
-                //Punkte aus Teil2 zusammenzählen               
-                foreach ($params['teil2'] as $k => $v) {
-                    if (isset($this->{'_antworten_' . $k})) {
-                        switch (count(array_intersect($this->{'_antworten_' . $k}, $v))) {
-                            case 1:
-                                $this->_result += 1;
-                                break;
-                            case 2:
-                                $this->_result += 3;
-                                break;
-                            case 3:
-                                $this->_result += 7;
-                                break;
-                        }
-                    }
-                }
-
-                $this->view->result = round($this->_result / 1.41);
-                $this->view->form = $form->render();
-            } elseif ($form->getSubForm('teil3')->isValid($this->getRequest()->getPost())) {
-                //Formular komplett validiert
-
-                $mail = new Zend_Mail('UTF-8');
-                $mail->setBodyHtml($this->view->partial('businessexcellencecheck/mail.phtml', $form->getValues()));
-                $mail->setFrom('manni@zapto.de', 'Steinbeis-Beratungszentrum');
-                $mail->addTo('manni@zapto.de', 'Steinbeis-Beratungszentrum');
-                $mail->setSubject('BUSINESS EXCELLENCE CHECK');
-                $mail->send();
-            } else {
-                $this->view->form = $form->render();
             }
+
+            $this->view->result = round($this->_result / 1.41);
+            $this->view->form = $form->render();
+        } elseif (
+                $this->getRequest()->isPost() &&
+                isset($postData) &&
+                $form->isValid($postData)
+        ) {
+            //Formular komplett validiert, alles per E-Mail senden
+
+            $mail = new Zend_Mail('UTF-8');
+            
+            $mail->setFrom('manni@zapto.de', 'Steinbeis-Beratungszentrum');
+            $mail->addTo('manni@zapto.de', 'Steinbeis-Beratungszentrum');
+            $mail->setSubject('BUSINESS EXCELLENCE CHECK');
+          
+            $mail_contents = array();
+
+            foreach ($form->getSubForms() as $subform) {
+                foreach ($subform->getElements() as $formelement) {
+
+                    if ($formelement instanceof Zend_Form_Element_Radio) {
+                        $mail_contents['radio'][] = array(
+                            'frage' => $formelement->getLabel(),
+                            'antwort' => $formelement->getMultiOption($formelement->getValue())
+                        );
+                    } elseif ($formelement instanceof Zend_Form_Element_MultiCheckbox) {
+                        $mail_contents['checkbox'][] = array(
+                            'frage' => $formelement->getLabel(),
+                            'antwort' => array_intersect_key($formelement->getMultiOptions(), array_flip($formelement->getValue())),
+                        );
+                    } elseif($formelement instanceof Zend_Form_Element_Text) {
+                         $mail_contents['text'][] = array(
+                            'frage' => $formelement->getLabel(),
+                            'antwort' => $formelement->getValue()
+                        );
+                    }
+                }
+            }
+            $mail->setBodyHtml($this->view->partial('businessexcellencecheck/mail.phtml',$mail_contents));
+            die($this->view->partial('businessexcellencecheck/mail.phtml', $mail_contents));
+              //$mail->send();
         } else {
+
             $this->view->form = $form->render();
         }
-
-        //$this->view->teil2 = $form->getSubForm('teil2')->render();
     }
 
     public function teil2Action() {
