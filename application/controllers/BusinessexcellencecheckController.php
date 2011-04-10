@@ -16,18 +16,22 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
 
     public function indexAction() {
 
-    }
-
-    public function teil1Action() {
         $form = new Application_Form_Businessexcellencecheck();
         $postData = $this->getRequest()->getPost();
 
+        if (isset($postData['teil2']['auswertung'])) {
+            $form->getSubForm('teil3')->getElement('firma')->setRequired(false);
+            $form->getSubForm('teil3')->getElement('name')->setRequired(false);
+            $form->getSubForm('teil3')->getElement('mail')->setRequired(false);
+            $form->getSubForm('teil3')->getElement('confirm')->setRequired(false);
+        }
         if (
                 $this->getRequest()->isPost() &&
                 isset($postData['teil2']['auswertung']) &&
                 $form->getSubForm('teil1')->isValid($postData) &&
                 $form->getSubForm('teil2')->isValid($postData)
         ) {
+
             $params = $form->getValidValues($postData);
 
             //Punkte aus Teil1 zusammenzählen
@@ -69,50 +73,64 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
             }
 
             $this->view->result = round($this->_result / 1.41);
+
+
+
+
             $this->view->form = $form->render();
         } elseif (
                 $this->getRequest()->isPost() &&
-                isset($postData) &&
+                !isset($postData['teil2']['auswertung']) &&
                 $form->isValid($postData)
         ) {
             //Formular komplett validiert, alles per E-Mail senden
+            try {
+                $mail = new Zend_Mail('UTF-8');
 
-            $mail = new Zend_Mail('UTF-8');
-            
-            $mail->setFrom('manni@zapto.de', 'Steinbeis-Beratungszentrum');
-            $mail->addTo('manni@zapto.de', 'Steinbeis-Beratungszentrum');
-            $mail->setSubject('BUSINESS EXCELLENCE CHECK');
-          
-            $mail_contents = array();
+                $mail->setFrom('manni@zapto.de', 'Steinbeis-Beratungszentrum');
+                $mail->addTo('manni@zapto.de', 'Steinbeis-Beratungszentrum');
+                $mail->addTo($form->getSubForm('teil3')->getElement('mail')->getValue(), $form->getSubForm('teil3')->getElement('name')->getValue());
+                $mail->setSubject('BUSINESS EXCELLENCE CHECK');
 
-            foreach ($form->getSubForms() as $subform) {
-                foreach ($subform->getElements() as $formelement) {
+                $mail_contents = array();
 
-                    if ($formelement instanceof Zend_Form_Element_Radio) {
-                        $mail_contents['radio'][] = array(
-                            'frage' => $formelement->getLabel(),
-                            'antwort' => $formelement->getMultiOption($formelement->getValue())
-                        );
-                    } elseif ($formelement instanceof Zend_Form_Element_MultiCheckbox) {
-                        $mail_contents['checkbox'][] = array(
-                            'frage' => $formelement->getLabel(),
-                            'antwort' => array_intersect_key($formelement->getMultiOptions(), array_flip($formelement->getValue())),
-                        );
-                    } elseif($formelement instanceof Zend_Form_Element_Text) {
-                         $mail_contents['text'][] = array(
-                            'frage' => $formelement->getLabel(),
-                            'antwort' => $formelement->getValue()
-                        );
+                foreach ($form->getSubForms() as $subform) {
+                    foreach ($subform->getElements() as $formelement) {
+
+                        if ($formelement instanceof Zend_Form_Element_Radio) {
+                            $mail_contents['radio'][] = array(
+                                'frage' => $formelement->getLabel(),
+                                'antwort' => $formelement->getMultiOption($formelement->getValue())
+                            );
+                        } elseif ($formelement instanceof Zend_Form_Element_MultiCheckbox) {
+                            $mail_contents['checkbox'][] = array(
+                                'frage' => $formelement->getLabel(),
+                                'antwort' => array_intersect_key($formelement->getMultiOptions(), array_flip($formelement->getValue())),
+                            );
+                        } elseif ($formelement instanceof Zend_Form_Element_Text) {
+                            $mail_contents['text'][] = array(
+                                'frage' => $formelement->getLabel(),
+                                'antwort' => $formelement->getValue()
+                            );
+                        }
                     }
                 }
+                $mail->setBodyHtml($this->view->partial('businessexcellencecheck/mail.phtml', $mail_contents));
+                $mail->send();
+                $this->_redirect('/businessexcellencecheck/success');
+            } catch (Zend_Mail_Exception $e) {
+                echo '<p>Es ist ein Fehler aufgetreten, bitte versuchen Sie es noch einmal. Sollte der Fehler weiterhin bestehen setzen Sie sich bitte mit uns in Verbindung. ( Fehler: ' . $e->getMessage() . ')';
+            } catch (Zend_Exception $e) {
+                echo '<p>Es ist ein Fehler aufgetreten, bitte versuchen Sie es noch einmal. Sollte der Fehler weiterhin bestehen setzen Sie sich bitte mit uns in Verbindung. ( Fehler: ' . $e->getMessage() . ')';
             }
-            $mail->setBodyHtml($this->view->partial('businessexcellencecheck/mail.phtml',$mail_contents));
-            die($this->view->partial('businessexcellencecheck/mail.phtml', $mail_contents));
-              //$mail->send();
         } else {
 
             $this->view->form = $form->render();
         }
+    }
+
+    public function teil1Action() {
+        
     }
 
     public function teil2Action() {
@@ -122,96 +140,6 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
     public function auswertungAction() {
         //$this->_helper->layout()->disableLayout();
         //$this->_helper->viewRenderer->setNoRender(true);
-    }
-
-    private function getForm() {
-        if (null === $this->_form) {
-            $this->_form = new Application_Form_Businessexcellencecheck();
-        }
-        return $this->_form;
-    }
-
-    /**
-     * Den Session Namespace erhalten den wir verwenden
-     *
-     * @return Zend_Session_Namespace
-     *
-     */
-    private function getSessionNamespace() {
-        if (null === $this->_session) {
-            $this->_session =
-                    new Zend_Session_Namespace($this->_namespace);
-        }
-
-        return $this->_session;
-    }
-
-    /**
-     * Eine Liste von bereits in der Session gespeicherten Forms erhalten
-     *
-     * @return array
-     *
-     */
-    private function getStoredForms() {
-        $stored = array();
-        foreach ($this->getSessionNamespace() as $key => $value) {
-            $stored[] = $key;
-        }
-
-        return $stored;
-    }
-
-    /**
-     * Eine Liste aller vorhandenen Subforms erhalten
-     *
-     * @return array
-     *
-     */
-    private function getPotentialForms() {
-        return array_keys($this->getForm()->getSubForms());
-    }
-
-    /**
-     * Welche Subform wurde übermittelt?
-     *
-     * @return false|Zend_Form_SubForm
-     *
-     */
-    private function getCurrentSubForm() {
-        $request = $this->getRequest();
-        if (!$request->isPost()) {
-            return false;
-        }
-
-        foreach ($this->getPotentialForms() as $name) {
-            if ($data = $request->getPost($name, false)) {
-                if (is_array($data)) {
-                    return $this->getForm()->getSubForm($name);
-                    break;
-                }
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * Die nächste Suboform für die Anzeige erhalten
-     *
-     * @return Zend_Form_SubForm|false
-     *
-     */
-    private function getNextSubForm() {
-        $storedForms = $this->getStoredForms();
-        $potentialForms = $this->getPotentialForms();
-
-        foreach ($potentialForms as $name) {
-            if (!in_array($name, $storedForms)) {
-                return $this->getForm()->getSubForm($name);
-            }
-        }
-
-        return false;
     }
 
 }

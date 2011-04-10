@@ -4,7 +4,8 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
 
     public function init() {
         $this->setMethod('post')
-                ->setName('businessexcellencecheck');
+                ->setName('businessexcellencecheck')
+                ->setAction('/businessexcellencecheck');
 
         $validatorNotEmpty = new Zend_Validate_NotEmpty();
         $validatorNotEmpty->setMessage('Bitte wählen Sie eine Antwort', Zend_Validate_NotEmpty::IS_EMPTY);
@@ -215,7 +216,7 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
             ))
         ));
 
-        $teil2->setElementDecorators(array(            
+        $teil2->setElementDecorators(array(
             new Zend_Form_Decorator_ViewScript(array(
                 'viewScript' => 'businessexcellencecheck/_formElementMulticheckbox.phtml'
             ))
@@ -272,73 +273,6 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
             new Zend_Form_Decorator_FormElements(),
             new Zend_Form_Decorator_Form()
         ));
-    }
-
-    /**
-     * Eine Subform für die anzeige Vorbereiten
-     *
-     * @param  string|Zend_Form_SubForm $spec
-     * @return Zend_Form_SubForm
-     */
-    public function prepareSubForm($spec) {
-        if (is_string($spec)) {
-            $subForm = $this->{$spec};
-        } elseif ($spec instanceof Zend_Form_SubForm) {
-            $subForm = $spec;
-        } else {
-            throw new Exception('Ungültiges Argument an ' .
-                    __FUNCTION__ . '() übergeben');
-        }
-        $this->setSubFormDecorators($subForm)
-                ->addSubmitButton($subForm)
-                ->addSubFormActions($subForm);
-        return $subForm;
-    }
-
-    /**
-     * Form Dekoratore zu einer individuellen Subform hinzufügen
-     *
-     * @param  Zend_Form_SubForm $subForm
-     * @return My_Form_Registration
-     */
-    public function setSubFormDecorators(Zend_Form_SubForm $subForm) {
-        $subForm->setDecorators(array(
-            'FormElements',
-            array('HtmlTag', array('tag' => 'div',
-                    'class' => 'zend_form')),
-            'Form',
-        ));
-        return $this;
-    }
-
-    /**
-     * Einen Sendebutton in einer individuellen Subform hinzufügen
-     *
-     * @param  Zend_Form_SubForm $subForm
-     * @return My_Form_Registration
-     */
-    public function addSubmitButton(Zend_Form_SubForm $subForm) {
-        $subForm->addElement(new Zend_Form_Element_Submit(
-                        'save',
-                        array(
-                            'label' => 'Speichern und Fortfahren',
-                            'required' => false,
-                            'ignore' => true,
-                        )
-        ));
-        return $this;
-    }
-
-    /**
-     * Aktion und Methode der Subform hinzufügen
-     *
-     * @param  Zend_Form_SubForm $subForm
-     * @return My_Form_Registration
-     */
-    public function addSubFormActions(Zend_Form_SubForm $subForm) {
-        $subForm->setAction('/registration/process')
-                ->setMethod('post');
-        return $this;
     }
 
 }

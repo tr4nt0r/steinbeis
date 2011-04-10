@@ -233,31 +233,41 @@
                                                                 <h3>Der BusinessExcellence Check 2011</h3>
                                                                 <p>&nbsp;</p>
                                                                 <h4>Teil 1</h4>
-                                                                    <?php foreach ($this->radio as $v) : ?>
+                                                                <?php foreach ($this->radio as $v) : ?>
+                                                                    <p>
+                                                                        <b>Frage:</b><br />
+                                                                    <?php echo $v['frage']; ?><br />
+                                                                    <b>Antwort:</b><br />
+                                                                    <?php echo $v['antwort'] ?>
+                                                                </p>
+
+                                                                <?php endforeach; ?>
+                                                                    <p>&nbsp;</p>
+                                                                    <h4>Teil 2</h4>
+                                                                <?php foreach ($this->checkbox as $v) : ?>
                                                                         <p>
                                                                             <b>Frage:</b><br />
-                                                                        <?php echo $v['frage']; ?><br />
-                                                                        <b>Antwort:</b><br />
-                                                                        <?php echo $v['antwort'] ?>
+                                                                    <?php echo $v['frage']; ?><br />
+                                                                        <b>Antworten:</b><br />
+                                                                        <ul>
+                                                                        <?php foreach ($v['antwort'] as $m) : ?>
+                                                                            <li class="bodyContent"><?php echo $m ?></li>
+                                                                        <?php endforeach; ?>
+                                                                        </ul>
+
                                                                     </p>
+                                                                    <p>&nbsp;</p>
 
-                                                                    <?php endforeach; ?>
-                                                                <p>&nbsp;</p>
-                                                                        <h4>Teil 2</h4>
-                                                                    <?php foreach ($this->checkbox as $v) : ?>
-                                                                            <p>
-                                                                                <b>Frage:</b><br />
-                                                                        <?php echo $v['frage']; ?><br />
-                                                                            <b>Antworten:</b><br />
-                                                                            <ul>
-                                                                            <?php foreach ($v['antwort'] as $m) : ?>
-                                                                                <li class="bodyContent"><?php echo $m ?></li>
-                                                                            <?php endforeach; ?>
-                                                                            </ul>
+                                                                <?php endforeach; ?>
 
-                                                                        </p>    
-                                                                        <p>&nbsp;</p>
-                                                                    <?php endforeach; ?>
+                                                                            <h4>Ihre Daten</h4>
+                                                                <?php foreach ($this->text as $v) : ?>
+                                                                                <p>
+                                                                                    <b><?php echo $v['frage']; ?></b><br />
+                                                                    <?php echo $v['antwort']; ?>
+                                                                            </p>
+                                                                <?php endforeach; ?>
+
                                                             </div>
                                                         </td>
                                                     </tr>
