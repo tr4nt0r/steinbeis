@@ -83,9 +83,12 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
             try {
                 $mail = new Zend_Mail('UTF-8');
 
-                $mail->setFrom('manni@zapto.de', 'Steinbeis-Beratungszentrum');
-                $mail->addTo('manni@zapto.de', 'Steinbeis-Beratungszentrum');
-                $mail->addTo($form->getSubForm('teil3')->getElement('mail')->getValue(), $form->getSubForm('teil3')->getElement('name')->getValue());
+                $mail->setFrom('kontakt@steinbeis-be.de', 'Steinbeis-Beratungszentrum Business Excellence');
+                $mail->addTo(array(
+                    'Steinbeis-Beratungszentrum Business Excellence' => 'manni@zapto.de',
+                    $form->getSubForm('teil3')->getElement('name')->getValue() => $form->getSubForm('teil3')->getElement('mail')->getValue()
+                ));
+
                 $mail->setSubject('BUSINESS EXCELLENCE CHECK');
 
                 $mail_contents = array();
