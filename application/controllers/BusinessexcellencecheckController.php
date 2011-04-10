@@ -73,10 +73,6 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
             }
 
             $this->view->result = round($this->_result / 1.41);
-
-
-
-
             $this->view->form = $form->render();
         } elseif (
                 $this->getRequest()->isPost() &&
@@ -140,6 +136,10 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
     public function auswertungAction() {
         //$this->_helper->layout()->disableLayout();
         //$this->_helper->viewRenderer->setNoRender(true);
+    }
+
+    public function successAction() {
+        // action body
     }
 
 }

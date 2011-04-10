@@ -17,6 +17,7 @@
           <actionMethod actionName="teil1"/>
           <actionMethod actionName="teil2"/>
           <actionMethod actionName="auswertung"/>
+          <actionMethod actionName="success"/>
         </controllerFile>
       </controllersDirectory>
       <formsDirectory>
@@ -44,6 +45,9 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="Businessexcellencecheck">
             <viewScriptFile forActionName="auswertung"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Businessexcellencecheck">
+            <viewScriptFile forActionName="success"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>
