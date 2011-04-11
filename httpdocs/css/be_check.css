@@ -1,18 +1,18 @@
 .be-warning {
-  padding: 12px;
-  background: #fff;
-  font-size: 13px;
-  color: #d57f4d;
-  font-weight: bold;
-  margin: 20px 0 20px;
-  border: 1px solid #d57f4d;
-  text-align: center;
+    padding: 12px;
+    background: #fff;
+    font-size: 13px;
+    color: #d57f4d;
+    font-weight: bold;
+    margin: 20px 0 20px;
+    border: 1px solid #d57f4d;
+    text-align: center;
 }
 
 .error {
-  padding: 2px 0;
-  background: #f6e4da;
-  margin: 3px 0 13px 0;
+    padding: 2px 0;
+    background: #f6e4da;
+    margin: 3px 0 13px 0;
 }
 
 .be-box1 {
@@ -226,3 +226,57 @@ label {
     font-weight: normal;
 }
 
+
+
+
+
+.ui-radio-state-disabled,
+.ui-radio-state-checked-disabled,
+.ui-radio-state-disabled-hover,
+.ui-radio-state-checked-disabled-hover {
+    color: #999;
+}
+span.ui-checkbox,
+span.ui-radio {
+    display: block;
+    float: left;
+    width: 16px;
+    height: 16px;
+    background: url("../pics/icon_checkbox.png") 0 -40px no-repeat;
+}
+
+span.ui-helper-hidden {
+    display: none;
+}
+
+label {
+    padding: 2px;
+
+}
+span.ui-radio-state-hover,
+span.ui-checkbox-state-hover {
+    background-position: 0 -114px;
+}
+
+span.ui-checkbox-state-checked {
+    background-position: 0 -1px;
+}
+
+span.ui-checkbox-state-checked-hover {
+    background-position: 0 -75px;
+}
+span.ui-radio-state-checked-disabled-hover,
+span.ui-radio-state-checked-disabled,
+span.ui-radio-state-checked {
+    background-position: 0 -161px;
+}
+
+
+span.ui-radio-state-checked-hover {
+    background-position: 0 -200px;
+}
+
+.ui-helper-hidden-accessible {
+    position: absolute;
+    left: -999em;
+}
