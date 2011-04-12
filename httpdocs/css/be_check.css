@@ -10,9 +10,7 @@
 }
 
 .error {
-    padding: 2px 0;
     background: #f6e4da;
-    margin: 3px 0 13px 0;
 }
 
 .be-box1 {
@@ -32,13 +30,12 @@
     margin: 0 0 5px;
 }
 .be-box3 {
-    width: 481px;
     padding: 4px 12px;
     background: #d57f4d;
     font-size: 11px;
     color: #fff;
     font-weight: normal;
-    margin: 0 0 5px 257px;
+    margin: 0 0 5px 260px;
     overflow: hidden;
 }
 .be-box3 .left {
@@ -51,13 +48,13 @@
     text-align: right;
 }
 .be-box4 {
-    margin: 0 0 5px 257px;
+    margin: 0 -7px 5px 260px;
     overflow: hidden;
 }
 .be-box4 div {
     width: 80px;
     float:left;
-    margin: 0 5px 0 0;
+    margin: 0 7px 0 0;
     background: #d57f4d;
     text-align: center;
 }
@@ -68,7 +65,7 @@
     font-weight: bold;
 }
 .be-left {
-    width: 245px;
+    width: 248px;
     float: left;
 }
 .be-text1 {
@@ -103,7 +100,8 @@ input[type=text] {
 
 fieldset {
     border: 0;
-    margin: 5px 0 15px 0;
+    margin: 3px -7px 13px -7px;
+    padding: 2px 0 2px 7px;
 }
 fieldset h3 {
     color: #D16E35;
@@ -112,17 +110,15 @@ fieldset h3 {
 }
 
 .be-label {
-    width: 248px;
-    margin-right: 3px;
-    padding-left: 6px;
+    width: 255px;
+    margin-right: 5px;
     font-size: 11px;
     color: #808080;
 }
 
 .be-group {
-    width: 374px;
+    width: 385px;
     height: 60px;
-    padding-left: 6px;
     float: left;
     font-size: 11px;
     color: #808080;
@@ -252,7 +248,7 @@ span.ui-radio {
     float: left;
     width: 80px;
     height: 32px;
-    margin: 3px 5px 18px 0px; 
+    margin: 3px 7px 18px 0; 
     background: url("../pics/be_checkbox.png") 0 -32px no-repeat;
 }
 
