@@ -232,15 +232,20 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
         ));
 
 
+//        $teil3->setElementDecorators(array(
+//            new Zend_Form_Decorator_Errors(),
+//            new Zend_Form_Decorator_ViewHelper(),
+//            new Zend_Form_Decorator_Label(array('class' => 'be-label')),
+//            new Zend_Form_Decorator_HtmlTag(array('tag' => 'div'))
+//        ));
+
         $teil3->setElementDecorators(array(
-            new Zend_Form_Decorator_Errors(),
-            new Zend_Form_Decorator_ViewHelper(),
-            new Zend_Form_Decorator_Label(array('class' => 'be-label')),
-            new Zend_Form_Decorator_HtmlTag(array('tag' => 'div'))
+            new Zend_Form_Decorator_ViewScript(array(
+                'viewScript' => 'businessexcellencecheck/_formElementDefault.phtml'
+            ))
         ));
 
         $teil3->setDecorators(array(
-            new Zend_Form_Decorator_FormErrors(),
             new Zend_Form_Decorator_FormElements (),
             new Zend_Form_Decorator_ViewScript(array(
                 'viewScript' => 'businessexcellencecheck/_formHeaderTeil3.phtml',

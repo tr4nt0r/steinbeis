@@ -28,7 +28,7 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
         if (
                 $this->getRequest()->isPost() &&
                 isset($postData['teil2']['auswertung']) &&
-                $form->getSubForm('teil1')->isValid($postData) &&
+                $form->getSubForm('teil1')->isValid($postData) &
                 $form->getSubForm('teil2')->isValid($postData)
         ) {
 
