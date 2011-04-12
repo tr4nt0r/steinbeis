@@ -1,0 +1,13 @@
+<div <?php if ($this->element->getMessages()): ?>class="error"<?php endif; ?>>
+    <?php
+    echo '<label for="' . $this->escape($this->element->getFullyQualifiedName()) . '" class="be-label">' . $this->element->getLabel() . '</label>';
+    echo $this->{$this->element->helper}(
+            $this->element->getFullyQualifiedName(),
+            $this->element->getValue(),
+            null,
+            null,
+            "\n"
+    );
+    ?>
+    
+</div>
