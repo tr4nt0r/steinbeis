@@ -156,8 +156,10 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
         $confirmation = new Zend_Form_Element_Checkbox('confirm');
         $confirmation->setLabel('JA, bitte werten Sie meine Antworten individuell aus und nehmen Sie unverbindlich Kontakt zu mir auf.')
                 ->setUncheckedValue('')
-                ->setRequired();
-
+                ->setRequired()
+                ->setErrorMessages(array(
+                    Zend_Validate_NotEmpty::IS_EMPTY => 'Bitte bestätigen Sie dieses Feld'
+                ));
         $senden = new Zend_Form_Element_Submit('senden');
         $senden->setLabel('Senden');
 
@@ -262,6 +264,7 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
         ));
 
         $confirmation->setDecorators(array(
+            new Zend_Form_Decorator_Errors(),
             new Zend_Form_Decorator_ViewHelper(),
             new Zend_Form_Decorator_Label(array('class' => 'be-label')),
             new Zend_Form_Decorator_HtmlTag(array('tag' => 'div')),
