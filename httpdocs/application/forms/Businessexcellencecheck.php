@@ -263,11 +263,12 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
             new Zend_Form_Decorator_HtmlTag(array('tag' => 'div', 'class' => 'be-button')),
         ));
 
-        $confirmation->setDecorators(array(
-            new Zend_Form_Decorator_Errors(),
-            new Zend_Form_Decorator_ViewHelper(),
+        $confirmation->setDecorators(array(            
+            new Zend_Form_Decorator_ViewHelper(),            
             new Zend_Form_Decorator_Label(array('class' => 'be-label')),
             new Zend_Form_Decorator_HtmlTag(array('tag' => 'div')),
+            new Zend_Form_Decorator_Errors(),
+            
         ));
 
         $senden->setDecorators(array(
