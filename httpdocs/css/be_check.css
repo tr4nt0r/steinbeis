@@ -116,6 +116,19 @@ input[type=text] {
     margin: 0 0 3px 0;
 }
 
+#contentText .be-button a,
+#contentText .be-button a:link,
+#contentText .be-button a:active,
+#contentText .be-button a:visited,
+#contentText .be-button a:hover {
+    background: #d57f4d;
+    border: 0;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 15px;
+    text-decoration: none;
+}
+
 fieldset {
     border: 0;
     margin: 3px -7px 13px -7px;
