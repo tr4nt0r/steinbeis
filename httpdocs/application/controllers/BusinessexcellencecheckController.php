@@ -81,12 +81,7 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
         ) {
             //Formular komplett validiert, alles per E-Mail senden
             try {
-                $mail = new Zend_Mail('UTF-8');
 
-                $mail->setFrom('kontakt@steinbeis-be.de', 'Steinbeis-Beratungszentrum Business Excellence');
-                $mail->addBcc('manni@zapto.de', 'Steinbeis-Beratungszentrum Business Excellence');
-                $mail->addTo($form->getSubForm('teil3')->getElement('mail')->getValue(), $form->getSubForm('teil3')->getElement('name')->getValue());
-                $mail->setSubject('BUSINESS EXCELLENCE CHECK');
 
                 $mail_contents = array();
 
@@ -111,8 +106,20 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
                         }
                     }
                 }
+
+                $mail = new Zend_Mail('UTF-8');
+                $mail->setSubject('BUSINESS EXCELLENCE CHECK');
                 $mail->setBodyHtml($this->view->partial('businessexcellencecheck/mail.phtml', $mail_contents));
+                $mail->setFrom('kontakt@steinbeis-be.de', 'Steinbeis-Beratungszentrum Business Excellence');
+                $mail->addTo($form->getSubForm('teil3')->getElement('mail')->getValue(), $form->getSubForm('teil3')->getElement('name')->getValue());
                 $mail->send();
+                
+                $mail->clearRecipients();
+                $mail->setFrom($form->getSubForm('teil3')->getElement('mail')->getValue(), $form->getSubForm('teil3')->getElement('name')->getValue());
+                $mail->addTo('guenther.schoeffner@steinbeis-be.de', 'Steinbeis-Beratungszentrum Business Excellence');
+                $mail->send();
+
+
                 $this->_redirect('/businessexcellencecheck/success');
             } catch (Zend_Mail_Exception $e) {
                 echo '<p>Es ist ein Fehler aufgetreten, bitte versuchen Sie es noch einmal. Sollte der Fehler weiterhin bestehen setzen Sie sich bitte mit uns in Verbindung. ( Fehler: ' . $e->getMessage() . ')';
