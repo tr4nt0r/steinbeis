@@ -230,9 +230,13 @@ label {
     font-size: 13px;
     font-weight: normal;
 }
-
-
-
+#be-result-close {
+    text-align: right;
+    
+}
+#be-result-close:hover {
+    cursor: pointer;
+}
 
 
 .ui-radio-state-disabled,
@@ -240,6 +244,10 @@ label {
 .ui-radio-state-disabled-hover,
 .ui-radio-state-checked-disabled-hover {
     color: #999;
+}
+
+label.ui-checkbox {
+  margin-right: 5px;
 }
 
 span.ui-checkbox,

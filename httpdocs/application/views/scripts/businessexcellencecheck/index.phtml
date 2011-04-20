@@ -37,13 +37,12 @@
         </script>
         <div id="be-overlay"></div>
             <div id="be-result">
-                <div id="be-result-close" style="text-align: right;" >SCHLIESSEN</div>
+                <div id="be-result-close">SCHLIESSEN</div>
                 <h1>BE-CHECK 2011</h1>
                 <p>ergibt für Sie <?php echo $this->result; ?> % von 100 % an exzellenten Ansätzen</p>
                 <p><span>Ihr Unternehmen befindet sich hier:</span></p>
 
                 <div id="be-result-bar">
-                    <!-- width:30px ist 0% -- width:766px ist 100% -->
                     <div id="be-result-arrow" style="width:<?php echo round($this->result * 7.36 + 30); ?>px"><img src="../pics/be-arrow.png" alt="" title="<?php echo round($this->result * 7.36 + 30); ?>" width="30" height="30" /></div>
                 </div>
 
