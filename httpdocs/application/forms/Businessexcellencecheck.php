@@ -101,35 +101,35 @@ class Application_Form_Businessexcellencecheck extends Zend_Form {
 
         $check1 = new Zend_Form_Element_MultiCheckbox('checkbox13');
         $check1->setLabel('Wie erfolgt in Ihrem Unternehmen die Entwicklung und Anpassung der Unternehmensstrategie?')
-                ->addMultiOption(1, 'Unsere erfahrene Führungsmannschaft lebt unsere Strategie. Sie muss nicht explizit ausgedrückt oder umformuliert werden.')
-                ->addMultiOption(2, 'Unser Know-how und unsere Partnerschaften mit Lieferanten fl ießen in unsere Strategie ein.')
+                ->addMultiOption(1, 'Unsere erfahrene Führungsmannschaft lebt unsere Strategie. Sie muss nicht explizit ausgedrückt oder umformuliert werden.')
+                ->addMultiOption(2, 'Unser Know-how und unsere Partnerschaften mit Lieferanten fließen in unsere Strategie ein.')
                 ->addMultiOption(3, 'Unsere Strategie hat sich über Jahre bewährt und muss nicht ständig angepasst werden.')
                 ->addMultiOption(4, 'Unsere Strategie leitet sich ausschließlich von unseren Kernkompetenzen ab.')
                 ->addMultiOption(5, 'Wir überprüfen unsere Strategie jährlich und machen viertel- bis halbjährlich ein kurzes Review.')
-                ->addMultiOption(6, 'Politische und gesellschaftliche Änderungen sind Basis für unsere Strategie.')
+                ->addMultiOption(6, 'Politische und gesellschaftliche Änderungen sind Basis für unsere Strategie.')
                 ->setRequired()
                 ->addValidator(new Manni_Validate_CheckboxChecked(array('checkboxgroup' => 'checkbox13', 'max' => 3)));
 
 
         $check2 = new Zend_Form_Element_MultiCheckbox('checkbox14');
-        $check2->setLabel('Wie werden bei Ihnen betriebliche Veränderungen wie beispielsweise die Umorganisation einer Abteilung oder eine Umstellung der Kundenkommunikation durchgeführt?')
-                ->addMultiOption(1, 'Durch das Vertrauen der Mitarbeiter in unsere Führung können Veränderungen schnell umgesetzt werden, ohne dass sie langen Erklärungen bedürfen.')
+        $check2->setLabel('Wie werden bei Ihnen betriebliche Veränderungen wie beispielsweise die Umorganisation einer Abteilung oder eine Umstellung der Kundenkommunikation durchgeführt?')
+                ->addMultiOption(1, 'Durch das Vertrauen der Mitarbeiter in unsere Führung können Veränderungen schnell umgesetzt werden, ohne dass sie langen Erklärungen bedürfen.')
                 ->addMultiOption(2, 'Aufgrund der Erfahrung und des Wissens unserer Mitarbeiter müssen sie nicht explizit auf Veränderungen vorbereitet werden.')
                 ->addMultiOption(3, 'Veränderungen werden intensiv an die Belegschaft kommuniziert. Auftretende Fragen werden ausgiebig beantwortet.')
                 ->addMultiOption(4, 'Größere Änderungen sind bei uns nicht nötig, da unser Geschäftsmodell seit Jahren auf einer soliden Basis steht.')
                 ->addMultiOption(5, 'Die Mitarbeiter werden auf die Veränderungen durch Maßnahmen wie Schulung oder Workshops vorbereitet.')
-                ->addMultiOption(6, 'Interne und externe Treiber für die Veränderung unserer Organisation werden ständig erfasst und bewertet.')
+                ->addMultiOption(6, 'Interne und externe Treiber für die Veränderung unserer Organisation werden ständig erfasst und bewertet.')
                 ->setRequired()
                 ->addValidator(new Manni_Validate_CheckboxChecked(array('checkboxgroup' => 'checkbox14', 'max' => 3)));
 
         $check3 = new Zend_Form_Element_MultiCheckbox('checkbox15');
         $check3->setLabel('Was geschieht in Ihrem Unternehmen, um den Prozess der Produkt- und Dienstleistungsentstehung zur Sicherung der Qualität zu gestalten?')
-                ->addMultiOption(1, 'Durch das Vertrauen der Mitarbeiter in unsere Führung können Veränderungen schnell umgesetzt werden, ohne dass sie langen Erklärungen bedürfen.')
-                ->addMultiOption(2, 'Aufgrund der Erfahrung und des Wissens unserer Mitarbeiter müssen sie nicht explizit auf Veränderungen vorbereitet werden.')
-                ->addMultiOption(3, 'Veränderungen werden intensiv an die Belegschaft kommuniziert. Auftretende Fragen werden ausgiebig beantwortet.')
-                ->addMultiOption(4, 'Größere Änderungen sind bei uns nicht nötig, da unser Geschäftsmodell seit Jahren auf einer soliden Basis steht.')
-                ->addMultiOption(5, 'Die Mitarbeiter werden auf die Veränderungen durch Maßnahmen wie Schulung oder Workshops vorbereitet.')
-                ->addMultiOption(6, 'Interne und externe Treiber für die Veränderung unserer Organisation werden ständig erfasst und bewertet.')
+                ->addMultiOption(1, 'Unsere Schlüsselprozesse haben jeweils ausgewiesene Prozesseigner, die sich um die Sicherstellung der Prozessqualität kümmern.')
+                ->addMultiOption(2, 'Unsere bewährten Prozesse sind allen Mitarbeitern seit Jahren unverändert vertraut. Unsere Qualitätsabteilung sorgt für die entsprechende Qualität.')
+                ->addMultiOption(3, 'Unsere erfahrenen Mitarbeiter wissen selbst am besten worauf es ankommt. Ein Regelwerk für Standards ist für das Tagesgeschäft nicht notwendig.')
+                ->addMultiOption(4, 'Unsere Prozesse werden durch unsere Mitarbeiter anhand eines umfassenden Kennzahlensystems kontrolliert und analysiert.')
+                ->addMultiOption(5, 'Unsere Mitarbeiter erarbeiten kontinuierlich kreative Prozessverbesserungen. Frischer Wind soll die Qualität vorwärts bringen.')
+                ->addMultiOption(6, 'Unser starkes Führungsteam kennt die Prozesse genau. Unsere Mitarbeiter können sich dadurch voll auf ihre Arbeit konzentrieren und müssen nicht erst die Prozesse in Ordnung bringen.')
                 ->addValidator(new Manni_Validate_CheckboxChecked(array('checkboxgroup' => 'checkbox15', 'max' => 3)))
                 ->setRequired();
 

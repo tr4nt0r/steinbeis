@@ -6,7 +6,7 @@ class BusinessexcellencecheckController extends Zend_Controller_Action {
     protected $_namespace = 'RegistrationController';
     protected $_session = null;
     protected $_result = 0;
-    protected $_antworten_checkbox13 = array('1', '5', '6');
+    protected $_antworten_checkbox13 = array('2', '5', '6');
     protected $_antworten_checkbox14 = array('3', '5', '6');
     protected $_antworten_checkbox15 = array('1', '4', '5');
 
